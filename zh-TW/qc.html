@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <title>品質檢驗</title>
+    <style>
+        .chick-icon span {
+            position: relative;
+        }
+
+        .chick-icon span::after {
+            content: "◆";
+            position: absolute;
+            left: -15px;
+
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+
+        .swiper-scrollbar {
+            display: none;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #60B8BC !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: var(--swiper-pagination-bullet-opacity, 1);
+            background: #60B8BC !important;
+        }
+
+        @media only screen and (min-width: 769px) {
+            .swiper-slide:first-child {
+                transition: transform 100ms;
+            }
+
+            .swiper-slide:first-child img {
+                transition: box-shadow 500ms;
+            }
+
+            .swiper-slide.swiper-slide-active:first-child {
+                transform: translateX(50%);
+                z-index: 2;
+            }
+
+            .swiper-slide.swiper-slide-active:first-child img {
+                box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.35);
+            }
+
+            .swiper-slide:nth-child(2) {
+                transition: transform 100ms;
+            }
+
+            .swiper-slide.swiper-slide-next:nth-child(2) {
+                transform: translateX(55%);
+                z-index: 1;
+            }
+
+            .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
+                transform: translateX(-50%);
+            }
+
+            .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
+                transform: translateX(-55%);
+            }
+        }
+    </style>
+</head>
+
+<body id="qc" class="bg-white">
+    <nav class="text-gray-700 border-b border-b-gray-100 drop-shadow relative z-20">
+        <div class="container mx-auto items-center justify-around px-4 md:flex">
+            <div class="items-center justify-between gap-6 md:flex">
+                <!-- Logo -->
+                <div class="flex w-full items-center justify-between md:w-auto">
+                    <a href="./index.html" class="flex-1 px-2 py-5 font-bold text-white">
+                        <img src="../image/logo.svg" alt="又華LOGO" />
+                    </a>
+                    <!-- mobile menu icon -->
+                    <div class="flex items-center md:hidden">
+                        <button type="button" class="mobile-menu-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="navigation-menu hidden flex-col items-center justify-start  pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./products.html">
+                                <span class="pointer-events-none select-none">產品介紹</span>
+                                <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </a>
+                        </button>
+                        <div
+                            class="dropdown-menu md:absolute relative w-full md:w-48 hidden   bg-white text-black mt-2">
+                            <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+                            <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+                            <a href="./products-1.html" class="hover:bg-gray-100  block px-6 py-2">巨瑪斯車用油添加劑</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./application.html">
+                                <span class="pointer-events-none select-none">產品應用</span>
+                                <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </a>
+                        </button>
+                        <div
+                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48 bg-white text-black mt-2">
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                        </div>
+                    </div>
+                    <a href="./esg.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">ESG永續</a>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none">品質檢驗</span>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./qc.html#tab1" class="hover:bg-gray-100  block px-6 py-2">認證</a>
+                            <a href="./qc.html#tab2" class="hover:bg-gray-100  block px-6 py-2">檢驗報告</a>
+                            <a href="./qc.html#tab3" class="hover:bg-gray-100  block px-6 py-2">得獎項目</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./media.html">
+                                <span class="pointer-events-none select-none">媒體專區</span>
+                                <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </a>
+                        </button>
+                        <div
+                            class="md:absolute relative   dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./media.html#tab2" class="hover:bg-gray-100  block px-6 py-2">新聞消息</a>
+                            <a href="./media.html#tab3" class="hover:bg-gray-100  block px-6 py-2">技術文章</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none">關於又華</span>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="md:absolute relative dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./about.html" class="hover:bg-gray-100  block px-6 py-2">公司簡介</a>
+                            <a href="./history.html" class="hover:bg-gray-100  block px-6 py-2">歷史沿革</a>
+                        </div>
+                    </div>
+                    <a href="./contact.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">聯絡我們</a>
+                </div>
+            </div>
+            <div
+                class="navigation-menu hidden flex-col items-center gap-5 pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                <a href="./inquiry.html" class="flex-1 px-2 py-5 font-bold text-white">
+                    <img src="../image/bag.svg" alt="" />
+                </a>
+                <button type="button" class="rounded-sm bg-teal-strong px-4 py-2 text-white hover:text-white">
+                    <a href="#">中文</a> / <a href="#">EN</a>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="banner relative z-0">
+        <div class="relative pb-24 pt-24">
+            <div class="container relative z-20 mx-auto flex justify-center  px-12 pb-8">
+                <div class="mx-auto  max-w-xl text-center">
+                    <h1 class="my-5 text-5xl font-bold leading-tight text-gray-800">品質檢驗</h1>
+                    <p class="mb-2 mt-2 text-lg leading-relaxed text-gray-600">
+                        關於又華股份公司的認證、檢驗報告和得獎項目
+                    </p>
+                </div>
+            </div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-white/75 to-white/100"></div>
+            <img src="../image/application2-bn.png" loading="lazy" alt=""
+                class="absolute inset-0 z-0 h-full w-full object-cover" />
+        </div>
+    </section>
+    <section class="content">
+        <div class="container mx-auto">
+            <div x-data="{ openTab: 1 }"
+                x-init="openTab = window.location.hash ? parseInt(window.location.hash.replace('#tab', '')) : 1; 
+            window.scrollTo(0, 0); 
+            window.addEventListener('hashchange', () => { openTab = window.location.hash ? parseInt(window.location.hash.replace('#tab', '')) : 1; window.scrollTo(0, 0) })"
+                class="lg:px-56 mb-24">
+                <div class="max-w-full mx-auto relative">
+                    <div
+                        class="mb-4 lg:pt-8 lg:pb-14 py-7 px-10 flex justify-center absolute left-0 lg:left-[-60px] top-[-90px] bg-gray-100 gap-5">
+                        <button x-on:click="openTab = 1;window.location.hash = 'tab1'"
+                            :class="{ ' text-teal font-bold chick-icon': openTab == 1 }"
+                            class="text-gray-600  text-sm font-bold px-4 py-2 inline-flex space-x-1 items-center">
+                            <span class="text-lg font-bold">認證</span>
+                        </button>
+                        <button x-on:click="openTab = 2;window.location.hash = 'tab2'"
+                            :class="{ ' text-teal font-bold chick-icon': openTab == 2 }"
+                            class="text-gray-600  text-sm font-bold px-4 py-2 inline-flex space-x-1 items-center">
+                            <span class="text-lg font-bold">檢驗報告</span>
+                        </button>
+                        <button x-on:click="openTab = 3;window.location.hash = 'tab3'"
+                            :class="{ ' text-teal font-bold chick-icon': openTab == 3 }"
+                            class="text-gray-600  text-sm font-bold px-4 py-2 inline-flex space-x-1 items-center">
+                            <span class="text-lg font-bold">得獎項目</span>
+                        </button>
+                    </div>
+
+                    <div class="relative z-10  bg-white p-4 border border-gray-200">
+                        <div x-show="openTab == 1">
+                            <div class="container  mx-auto p-4">
+                                <div class="grid ">
+                                    <div class="swiper mySwiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-001.jpg" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-002.jpg" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-003.jpg" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-004.jpg" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-006.jpg" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-007.jpg" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-008.jpg" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="https://cdn.magloft.com/github/swiper/images/page-009.jpg" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-scrollbar"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div x-show="openTab == 2">
+                            <div class="main flex flex-col m-5">
+                                <a href="https://www.w3schools.com/js/" target="_new">
+                                    <div
+                                        class="group flex hover:shadow-lg select-none p-10 rounded-md border-gray-300 border mb-3 hover:border-teal-strong cursor-pointer">
+                                        <div class="left flex justify-around items-start">
+                                            <div class="w-32">測試報告</div>
+                                            <div class="lg:mr-20 mr-5">|</div>
+                                            <div>
+                                                <div class="header text-gray-700 font-semibold text-xl">環保可塑劑REACH163測試
+                                                </div>
+                                                <div class="desc text-gray-600">2015 / 10 /01
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right m-auto mr-0">
+                                            <a href="#" class="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class=" size-6 group-hover:text-teal-strong transition-colors">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                </svg>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.w3schools.com/js/" target="_new">
+                                    <div
+                                        class="group flex hover:shadow-lg select-none p-10 rounded-md border-gray-300 border mb-3 hover:border-teal-strong cursor-pointer">
+                                        <div class="left flex justify-around items-start">
+                                            <div class="w-32">測試報告</div>
+                                            <div class="lg:mr-20 mr-5">|</div>
+                                            <div>
+                                                <div class="header text-gray-700 font-semibold text-xl">環保可塑劑REACH163測試
+                                                </div>
+                                                <div class="desc text-gray-600">2015 / 10 /01
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right m-auto mr-0">
+                                            <a href="#" class="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class=" size-6 group-hover:text-teal-strong transition-colors">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                </svg>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.w3schools.com/js/" target="_new">
+                                    <div
+                                        class="group flex hover:shadow-lg select-none p-10 rounded-md border-gray-300 border mb-3 hover:border-teal-strong cursor-pointer">
+                                        <div class="left flex justify-around items-start">
+                                            <div class="w-32">測試報告</div>
+                                            <div class="lg:mr-20 mr-5">|</div>
+                                            <div>
+                                                <div class="header text-gray-700 font-semibold text-xl">環保可塑劑REACH163測試
+                                                </div>
+                                                <div class="desc text-gray-600">2015 / 10 /01
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right m-auto mr-0">
+                                            <a href="#" class="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class=" size-6 group-hover:text-teal-strong transition-colors">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                </svg>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div x-show="openTab == 3">
+                            <div class="flex items-center justify-center">
+                                <div class="container  mx-auto p-4">
+                                    <div
+                                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+                                        <!-- Replace this with your grid items -->
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md">
+                                            <img src="../image/qc2.png" alt="Placeholder Image"
+                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    2018年傑出產業創新獎</div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md">
+                                            <img src="../image/qc2.png" alt="Placeholder Image"
+                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    2018年傑出產業創新獎</div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md">
+                                            <img src="../image/qc2.png" alt="Placeholder Image"
+                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    2018年傑出產業創新獎</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="relative border border-gray-200 pb-0 pt-16">
+        <div class="container mx-auto relative">
+            <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
+                <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
+              after:w-[113%] after:hover:top-0 after:transition-all ">
+                    <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+                </div>
+            </a>
+            <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
+                <ul class="m-0 grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-[30px] p-0">
+                    <li class="text-base  leading-relaxed">
+                        <a href="./products.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                產品介紹
+                            </div>
+                        </a>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./products-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">塑膠PVC添加劑</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./products-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">油漆塗料加工油</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <a href="./application.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                產品應用
+                            </div>
+                        </a>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./application-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">塑橡膠產業</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./application-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">車用產業</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed ">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            品質檢驗
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab1"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">認證</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab2"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">檢測報告</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab3"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">得獎獎項</a>
+                            </li>
+                        </ul>
+                        <a href="./media.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                媒體專區
+                            </div>
+                        </a>
+                        <ul class="mb-[10px] mt-0 list-none pl-0">
+                            <li class="text-[16px] leading-7">
+                                <a href="./media.html#tab2"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">新聞消息</a>
+                            </li>
+                            <li class="text-[16px] leading-7">
+                                <a href="./media.html#tab3"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">技術文章</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            關於又華
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./about.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">公司簡介</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./history.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">歷史沿革</a>
+                            </li>
+                        </ul>
+                        <a href="./esg.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                ESG永續
+                            </div>
+                        </a>
+                        <a href="./contact.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-teal-strong">
+                                聯絡我們
+                            </div>
+                        </a>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            Connect with Us
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7 ">
+                                <a href="#" target="_blank"
+                                    class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                                    <img src="../image/footer-fb.svg" alt="" class="mr-3 h-8 w-8" />
+                                    <div>Facebook</div>
+                                </a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="#" target="_blank"
+                                    class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                                    <img src="../image/footer-line.svg" alt="" class="mr-3 h-8 w-8" />
+                                    <div>LINE</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-teal-strong py-8 text-white">
+            <div class="container relative z-20 mx-auto ">
+                <div class="row pl-14 pr-14 flex md:justify-between md:flex-nowrap flex-wrap">
+                    <div>
+                        <div>
+                            Designed by Lets
+                            <span><a href="https://www.letsmedia.tw/" target="_blank">Lets Media</a>
+                                <a href="https://www.ezb2b.com/" target="_blank">EZB2B</a></span>
+                        </div>
+                    </div>
+                    <div>
+                        Copyright © 2024 又華股份有限公司 版權所有.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/swiper.js"></script>
+    <!-- <script src="../js/common.js"></script> -->
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            centeredSlides: false,
+            slidesPerGroupSkip: 1,
+            grabCursor: true,
+            keyboard: {
+                enabled: true,
+            },
+            breakpoints: {
+                769: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                },
+            },
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>媒體專區</title>
+    <style>
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</head>
+
+<body id="media" class="bg-white">
+    <nav class="text-gray-700 border-b border-b-gray-100 drop-shadow relative z-20">
+        <div class="container mx-auto items-center justify-around px-4 md:flex">
+            <div class="items-center justify-between gap-6 md:flex">
+                <!-- Logo -->
+                <div class="flex w-full items-center justify-between md:w-auto">
+                    <a href="./index.html" class="flex-1 px-2 py-5 font-bold text-white">
+                        <img src="../image/logo.svg" alt="又華LOGO" />
+                    </a>
+                    <!-- mobile menu icon -->
+                    <div class="flex items-center md:hidden">
+                        <button type="button" class="mobile-menu-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="navigation-menu hidden flex-col items-center justify-start  pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./products.html">
+                                <span class="pointer-events-none select-none">產品介紹</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu md:absolute relative w-full md:w-48 hidden   bg-white text-black mt-2">
+                            <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+                            <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+                            <a href="./products-1.html" class="hover:bg-gray-100  block px-6 py-2">巨瑪斯車用油添加劑</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./application.html">
+                                <span class="pointer-events-none select-none">產品應用</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+
+                        </button>
+                        <div
+                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48 bg-white text-black mt-2">
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                        </div>
+                    </div>
+                    <a href="./esg.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">ESG永續</a>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none">品質檢驗</span>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./qc.html#tab1" class="hover:bg-gray-100  block px-6 py-2">認證</a>
+                            <a href="./qc.html#tab2" class="hover:bg-gray-100  block px-6 py-2">檢驗報告</a>
+                            <a href="./qc.html#tab3" class="hover:bg-gray-100  block px-6 py-2">得獎項目</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./media.html">
+                                <span class="pointer-events-none select-none">媒體專區</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+
+                        </button>
+                        <div
+                            class="md:absolute relative   dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./media.html#tab2" class="hover:bg-gray-100  block px-6 py-2">新聞消息</a>
+                            <a href="./media.html#tab3" class="hover:bg-gray-100  block px-6 py-2">技術文章</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none">關於又華</span>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="md:absolute relative dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./about.html" class="hover:bg-gray-100  block px-6 py-2">公司簡介</a>
+                            <a href="./history.html" class="hover:bg-gray-100  block px-6 py-2">歷史沿革</a>
+                        </div>
+                    </div>
+                    <a href="./contact.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">聯絡我們</a>
+                </div>
+            </div>
+            <div
+                class="navigation-menu hidden flex-col items-center gap-5 pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                <a href="./inquiry.html" class="flex-1 px-2 py-5 font-bold text-white">
+                    <img src="../image/bag.svg" alt="" />
+                </a>
+                <button type="button" class="rounded-sm bg-teal-strong px-4 py-2 text-white hover:text-white">
+                    <a href="#">中文</a> / <a href="#">EN</a>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="banner relative z-10">
+        <div class="relative pb-24 pt-24">
+            <div class="container relative z-20 mx-auto flex justify-center  px-12 pb-8">
+                <div class="mx-auto  max-w-xl text-center">
+                    <h1 class="my-5 text-5xl font-bold leading-tight text-gray-800">媒體專區</h1>
+                    <p class="mb-2 mt-2 text-lg leading-relaxed text-gray-600">
+                        關於又華股份公司的新聞消息和技術文章
+                    </p>
+                </div>
+            </div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-white/75 to-white/100"></div>
+            <img src="../image/media-bn.png" loading="lazy" alt=""
+                class="absolute inset-0 z-0 h-full w-full object-cover" />
+        </div>
+    </section>
+    <section class="content">
+        <div class="containe mx-autor">
+            <div x-data="{ openTab: 1 }"
+                x-init="openTab = window.location.hash ? parseInt(window.location.hash.replace('#tab', '')) : 1; 
+        window.scrollTo(0, 0); 
+        window.addEventListener('hashchange', () => { openTab = window.location.hash ? parseInt(window.location.hash.replace('#tab', '')) : 1; window.scrollTo(0, 0) })"
+                class="lg:px-28 mb-24">
+                <div class="max-w-full mx-auto">
+                    <div class="mb-4 flex  rounded-lg  justify-center">
+                        <button x-on:click="openTab = 1;window.location.hash = 'tab1'"
+                            :class="{ 'bg-teal text-white': openTab === 1 }"
+                            class="text-teal  text-sm  hover:bg-teal hover:bg-opacity-70 hover:text-white border border-teal  rounded-l-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
+                            <span>全部</span>
+                        </button>
+                        <button x-on:click="openTab = 2;window.location.hash = 'tab2'"
+                            :class="{ 'bg-teal text-white': openTab === 2 }"
+                            class="text-teal text-sm  border-y  border-teal font-medium px-4 py-2 inline-flex space-x-1 items-center">
+                            <span>新聞消息</span>
+                        </button>
+                        <button x-on:click="openTab = 3;window.location.hash = 'tab3'"
+                            :class="{ 'bg-teal text-white': openTab === 3 }"
+                            class="text-teal text-sm  border border-teal rounded-r-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
+                            <span>技術文章</span>
+                        </button>
+                    </div>
+
+
+                    <div x-show="openTab === 1" class=" bg-white p-4  ">
+                        <div class="flex items-center justify-center">
+                            <div class="container  mx-auto p-4">
+                                <div
+                                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+                                    <!-- Replace this with your grid items -->
+                                    <a href="./media-1.html" class="group block bg-white  p-4">
+                                        <div class="relative">
+                                            <div
+                                                class="transition-all group-hover:h-full text-sm absolute w-full h-1/6 bottom-0 left-0 bg-teal/60 text-white pl-5 py-5 flex items-center group-hover:justify-center">
+                                                <span class="group-hover:hidden">2021
+                                                    年 12 月 15 日</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="group-hover:block size-10 -rotate-45 text-white hidden">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                                </svg>
+
+                                            </div>
+                                            <img src="../image/news-1.jpg" alt="Placeholder Image"
+                                                class="w-full lg:h-40 h-56 object-cover">
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div class="font-bold text-xl mb-2">生質測試報告出爐:檢測結果100%</div>
+                                            <p class="text-gray-700 text-base">
+                                                又華產品堅持選用植物性油脂為原料研發出環保加工油，可減少使用石化原料，降低對環境的衝擊
+                                                YHE-560C橡膠軟化油，委託BETA實驗室測試ASTM D6866生質含量測試結果為：100 % Biobased Carbon
+                                                Content
+                                            </p>
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div
+                                                class="transition-opacity group-hover:opacity-70 duration-350 flex text-teal">
+                                                查看更多
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="./media-1.html" class="group block bg-white  p-4">
+                                        <div class="relative">
+                                            <div
+                                                class="transition-all group-hover:h-full text-sm absolute w-full h-1/6 bottom-0 left-0 bg-teal/60 text-white pl-5 py-5 flex items-center group-hover:justify-center">
+                                                <span class="group-hover:hidden">2021
+                                                    年 12 月 15 日</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="group-hover:block size-10 -rotate-45 text-white hidden">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                                </svg>
+
+                                            </div>
+                                            <img src="../image/news-1.jpg" alt="Placeholder Image"
+                                                class="w-full lg:h-40 h-56 object-cover">
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div class="font-bold text-xl mb-2">生質測試報告出爐:檢測結果100%</div>
+                                            <p class="text-gray-700 text-base">
+                                                又華產品堅持選用植物性油脂為原料研發出環保加工油，可減少使用石化原料，降低對環境的衝擊
+                                                YHE-560C橡膠軟化油，委託BETA實驗室測試ASTM D6866生質含量測試結果為：100 % Biobased Carbon
+                                                Content
+                                            </p>
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div
+                                                class="transition-opacity group-hover:opacity-70 duration-350 flex text-teal">
+                                                查看更多
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="./media-1.html" class="group block bg-white  p-4">
+                                        <div class="relative">
+                                            <div
+                                                class="transition-all group-hover:h-full text-sm absolute w-full h-1/6 bottom-0 left-0 bg-teal/60 text-white pl-5 py-5 flex items-center group-hover:justify-center">
+                                                <span class="group-hover:hidden">2021
+                                                    年 12 月 15 日</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="group-hover:block size-10 -rotate-45 text-white hidden">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                                </svg>
+
+                                            </div>
+                                            <img src="../image/blog-1.png" alt="Placeholder Image"
+                                                class="w-full lg:h-40 h-56 object-cover">
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div class="font-bold text-xl mb-2">生質測試報告出爐:檢測結果100%</div>
+                                            <p class="text-gray-700 text-base">
+                                                又華產品堅持選用植物性油脂為原料研發出環保加工油，可減少使用石化原料，降低對環境的衝擊
+                                                YHE-560C橡膠軟化油，委託BETA實驗室測試ASTM D6866生質含量測試結果為：100 % Biobased Carbon
+                                                Content
+                                            </p>
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div
+                                                class="transition-opacity group-hover:opacity-70 duration-350 flex text-teal">
+                                                查看更多
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- Add more items as needed -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-show="openTab === 2" class="  p-4">
+                        <div
+                            class="bg-gradient-to-bl from-blue-50 to-violet-50 flex items-center justify-center lg:h-screen">
+                            <div class="container  mx-auto p-4">
+                                <div
+                                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+                                    <!-- Replace this with your grid items -->
+                                    <a href="./media-1.html" class="group block bg-white  p-4">
+                                        <div class="relative">
+                                            <div
+                                                class="transition-all group-hover:h-full text-sm absolute w-full h-1/6 bottom-0 left-0 bg-teal/60 text-white pl-5 py-5 flex items-center group-hover:justify-center">
+                                                <span class="group-hover:hidden">2021
+                                                    年 12 月 15 日</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="group-hover:block size-10 -rotate-45 text-white hidden">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                                </svg>
+
+                                            </div>
+                                            <img src="../image/news-1.jpg" alt="Placeholder Image"
+                                                class="w-full lg:h-40 h-56 object-cover">
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div class="font-bold text-xl mb-2">生質測試報告出爐:檢測結果100%</div>
+                                            <p class="text-gray-700 text-base">
+                                                又華產品堅持選用植物性油脂為原料研發出環保加工油，可減少使用石化原料，降低對環境的衝擊
+                                                YHE-560C橡膠軟化油，委託BETA實驗室測試ASTM D6866生質含量測試結果為：100 % Biobased Carbon
+                                                Content
+                                            </p>
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div
+                                                class="transition-opacity group-hover:opacity-70 duration-350 flex text-teal">
+                                                查看更多
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="./media-1.html" class="group block bg-white  p-4">
+                                        <div class="relative">
+                                            <div
+                                                class="transition-all group-hover:h-full text-sm absolute w-full h-1/6 bottom-0 left-0 bg-teal/60 text-white pl-5 py-5 flex items-center group-hover:justify-center">
+                                                <span class="group-hover:hidden">2021
+                                                    年 12 月 15 日</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="group-hover:block size-10 -rotate-45 text-white hidden">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                                </svg>
+
+                                            </div>
+                                            <img src="../image/news-1.jpg" alt="Placeholder Image"
+                                                class="w-full lg:h-40 h-56 object-cover">
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div class="font-bold text-xl mb-2">生質測試報告出爐:檢測結果100%</div>
+                                            <p class="text-gray-700 text-base">
+                                                又華產品堅持選用植物性油脂為原料研發出環保加工油，可減少使用石化原料，降低對環境的衝擊
+                                                YHE-560C橡膠軟化油，委託BETA實驗室測試ASTM D6866生質含量測試結果為：100 % Biobased Carbon
+                                                Content
+                                            </p>
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div
+                                                class="transition-opacity group-hover:opacity-70 duration-350 flex text-teal">
+                                                查看更多
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- Add more items as needed -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-show="openTab === 3" class=" p-4">
+                        <div
+                            class="bg-gradient-to-bl from-blue-50 to-violet-50 flex items-center justify-center lg:h-screen">
+                            <div class="container  mx-auto p-4">
+                                <div
+                                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+                                    <!-- Replace this with your grid items -->
+                                    <a href="./media-1.html" class="group block bg-white  p-4">
+                                        <div class="relative">
+                                            <div
+                                                class="transition-all group-hover:h-full text-sm absolute w-full h-1/6 bottom-0 left-0 bg-teal/60 text-white pl-5 py-5 flex items-center group-hover:justify-center">
+                                                <span class="group-hover:hidden">2021
+                                                    年 12 月 15 日</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="group-hover:block size-10 -rotate-45 text-white hidden">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                                </svg>
+
+                                            </div>
+                                            <img src="../image/blog-1.png" alt="Placeholder Image"
+                                                class="w-full lg:lg:h-40 h-56 h-56 object-cover">
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div class="font-bold text-xl mb-2">生質測試報告出爐:檢測結果100%</div>
+                                            <p class="text-gray-700 text-base">
+                                                又華產品堅持選用植物性油脂為原料研發出環保加工油，可減少使用石化原料，降低對環境的衝擊
+                                                YHE-560C橡膠軟化油，委託BETA實驗室測試ASTM D6866生質含量測試結果為：100 % Biobased Carbon
+                                                Content
+                                            </p>
+                                        </div>
+                                        <div class="px-1 py-4">
+                                            <div
+                                                class="transition-opacity group-hover:opacity-70 duration-350 flex text-teal">
+                                                查看更多
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- Add more items as needed -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="relative border border-gray-200 pb-0 pt-16">
+        <div class="container mx-auto relative">
+            <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
+                <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
+              after:w-[113%] after:hover:top-0 after:transition-all ">
+                    <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+                </div>
+            </a>
+            <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
+                <ul class="m-0 grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-[30px] p-0">
+                    <li class="text-base  leading-relaxed">
+                        <a href="./products.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                產品介紹
+                            </div>
+                        </a>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./products-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">塑膠PVC添加劑</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./products-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">油漆塗料加工油</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <a href="./application.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                產品應用
+                            </div>
+                        </a>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./application-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">塑橡膠產業</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./application-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">車用產業</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed ">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            品質檢驗
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab1"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">認證</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab2"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">檢測報告</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab3"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">得獎獎項</a>
+                            </li>
+                        </ul>
+                        <a href="./media.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                媒體專區
+                            </div>
+                        </a>
+                        <ul class="mb-[10px] mt-0 list-none pl-0">
+                            <li class="text-[16px] leading-7">
+                                <a href="./media.html#tab2"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">新聞消息</a>
+                            </li>
+                            <li class="text-[16px] leading-7">
+                                <a href="./media.html#tab3"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">技術文章</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            關於又華
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./about.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">公司簡介</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./history.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">歷史沿革</a>
+                            </li>
+                        </ul>
+                        <a href="./esg.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                ESG永續
+                            </div>
+                        </a>
+                        <a href="./contact.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-teal-strong">
+                                聯絡我們
+                            </div>
+                        </a>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            Connect with Us
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7 ">
+                                <a href="#" target="_blank"
+                                    class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                                    <img src="../image/footer-fb.svg" alt="" class="mr-3 h-8 w-8" />
+                                    <div>Facebook</div>
+                                </a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="#" target="_blank"
+                                    class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                                    <img src="../image/footer-line.svg" alt="" class="mr-3 h-8 w-8" />
+                                    <div>LINE</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-teal-strong py-8 text-white">
+            <div class="container relative z-20 mx-auto ">
+                <div class="row pl-14 pr-14 flex md:justify-between md:flex-nowrap flex-wrap">
+                    <div>
+                        <div>
+                            Designed by Lets
+                            <span><a href="https://www.letsmedia.tw/" target="_blank">Lets Media</a>
+                                <a href="https://www.ezb2b.com/" target="_blank">EZB2B</a></span>
+                        </div>
+                    </div>
+                    <div>
+                        Copyright © 2024 又華股份有限公司 版權所有.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/common.js"></script>
+</body>
+
+</html>

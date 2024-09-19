@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/swiper.min.css" />
+  <link href="../dist/output.css" rel="stylesheet" />
+  <!-- 引入編譯後的 CSS -->
+  <title>首頁</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      box-sizing: border-box;
+      font-style: normal;
+      font-size: 16px;
+    }
+
+    .img-area::after {
+      content: "";
+      display: block;
+      background: url(../images/top/curve-cover_sp.svg) no-repeat;
+      background-size: 100% 80px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      display: none;
+    }
+
+    .img-area::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: url(../image/cover.svg) 0 0 no-repeat;
+      background-size: 100% 80px;
+    }
+  </style>
+</head>
+
+<body id="home" class="bg-white">
+  <nav class="text-gray-700 border-b border-b-gray-100 drop-shadow relative z-20">
+    <div class="container mx-auto items-center justify-around px-4 md:flex">
+      <div class="items-center justify-between gap-6 md:flex">
+        <!-- Logo -->
+        <div class="flex w-full items-center justify-between md:w-auto">
+          <a href="./index.html" class="flex-1 px-2 py-5 font-bold text-white">
+            <img src="../image/logo.svg" alt="又華LOGO" />
+          </a>
+          <!-- mobile menu icon -->
+          <div class="flex items-center md:hidden">
+            <button type="button" class="mobile-menu-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="navigation-menu hidden flex-col items-center justify-start  pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+          <!-- Dropdown menu -->
+          <div class="relative">
+            <button type="button"
+              class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+              <a href="./products.html">
+                <span class="pointer-events-none select-none">產品介紹</span>
+              </a>
+              <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <div class="dropdown-menu md:absolute relative w-full md:w-48 hidden   bg-white text-black mt-2">
+              <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+              <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+              <a href="./products-1.html" class="hover:bg-gray-100  block px-6 py-2">巨瑪斯車用油添加劑</a>
+            </div>
+          </div>
+          <!-- Dropdown menu -->
+          <div class="relative">
+            <button type="button"
+              class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+              <a href="./application.html">
+                <span class="pointer-events-none select-none">產品應用</span>
+              </a>
+              <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+
+            </button>
+            <div class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48 bg-white text-black mt-2">
+              <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+              <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+              <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+            </div>
+          </div>
+          <a href="./esg.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">ESG永續</a>
+          <!-- Dropdown menu -->
+          <div class="relative">
+            <button type="button"
+              class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+              <span class="pointer-events-none select-none">品質檢驗</span>
+              <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <div class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+              <a href="./qc.html#tab1" class="hover:bg-gray-100  block px-6 py-2">認證</a>
+              <a href="./qc.html#tab2" class="hover:bg-gray-100  block px-6 py-2">檢驗報告</a>
+              <a href="./qc.html#tab3" class="hover:bg-gray-100  block px-6 py-2">得獎項目</a>
+            </div>
+          </div>
+          <!-- Dropdown menu -->
+          <div class="relative">
+            <button type="button"
+              class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+              <a href="./media.html">
+                <span class="pointer-events-none select-none">媒體專區</span>
+              </a>
+              <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+
+            </button>
+            <div class="md:absolute relative   dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+              <a href="./media.html#tab2" class="hover:bg-gray-100  block px-6 py-2">新聞消息</a>
+              <a href="./media.html#tab3" class="hover:bg-gray-100  block px-6 py-2">技術文章</a>
+            </div>
+          </div>
+          <!-- Dropdown menu -->
+          <div class="relative">
+            <button type="button"
+              class="w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+              <span class="pointer-events-none select-none">關於又華</span>
+              <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <div class="md:absolute relative dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+              <a href="./about.html" class="hover:bg-gray-100  block px-6 py-2">公司簡介</a>
+              <a href="./history.html" class="hover:bg-gray-100  block px-6 py-2">歷史沿革</a>
+            </div>
+          </div>
+          <a href="./contact.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">聯絡我們</a>
+        </div>
+      </div>
+      <div class="navigation-menu hidden flex-col items-center gap-5 pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+        <a href="./inquiry.html" class="flex-1 px-2 py-5 font-bold text-white">
+          <img src="../image/bag.svg" alt="" />
+        </a>
+        <button type="button" class="rounded-sm bg-teal-strong px-4 py-2 text-white hover:text-white">
+          <a href="#">中文</a> / <a href="#">EN</a>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <section class="s1">
+    <div class="lg:min-h-full relative">
+      <div class="swiper mySwiper ">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide flex flex-col md:flex-row">
+            <div class="w-full md:w-1/2 lg:pt-32 lg:pl-24 px-8 py-12">
+              <h1
+                class="mb-2 lg:text-6xl text-5xl font-bold leading-tight tracking-wide overflow-hidden text-ellipsis whitespace-nowrap ">
+                因應環保趨勢<br />創造無限商機
+              </h1>
+              <p class="mb-8 text-2xl">環保油品 | 生質化學品 | 永續經營</p>
+              <a href="#"
+                class="rounded border border-current bg-teal-strong px-4 py-2 text-white transition-opacity hover:opacity-70 duration-350">探索更多</a>
+            </div>
+            <div class="w-full md:w-1/2 lg:h-[calc(100vh-100px)] h-auto relative">
+              <img class="h-full w-full object-cover" src="../image/home-bn1.png" alt="">
+              <div class="absolute md:top-auto md:right-auto top-16 right-16">
+                <div
+                  class="swiper-button-next group bottom-0 left-1/2 right-auto top-auto ml-0 h-16 w-16 bg-gray-300 bg-opacity-30 border-l border-gray-100 border-opacity-50">
+                  <img src="../image/arrow.svg" class="text-gray-500 opacity-60 group-hover:opacity-100" alt="" />
+                </div>
+                <div
+                  class="swiper-button-prev group bottom-0 left-auto right-1/2 top-auto mr-0 h-16 w-16 bg-gray-300 bg-opacity-30">
+                  <img src="../image/arrow.svg"
+                    class="text-gray-500 opacity-60 hover:opacity-100 group-hover:opacity-100"
+                    style="transform: rotate(180deg)" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col sm:flex-row">
+            <div class="w-full md:w-1/2 lg:pt-32 lg:pl-24 px-6 py-12">
+              <h1
+                class="mb-2 lg:text-6xl text-5xl font-bold leading-tight tracking-wide overflow-hidden text-ellipsis whitespace-nowrap">
+                2 因應環保趨勢<br />創造無限商機
+              </h1>
+              <div class="mb-8 text-2xl">環保油品 | 生質化學品 | 永續經營</div>
+              <a href="#"
+                class="rounded border border-current bg-teal-strong px-4 py-2 text-white transition-opacity hover:opacity-70 duration-350">探索更多</a>
+            </div>
+            <div class="w-full md:w-1/2 lg:h-[calc(100vh-100px)] h-auto relative">
+              <img class="h-full w-full object-cover" src="../image/home-bn2.png" alt="">
+              <div class="absolute md:top-auto md:right-auto top-16 right-16">
+                <div
+                  class="swiper-button-next group bottom-0 left-1/2 right-auto top-auto ml-0 h-16 w-16 bg-gray-300 bg-opacity-30 border-l border-gray-100 border-opacity-50">
+                  <img src="../image/arrow.svg" class="text-gray-500 opacity-60 group-hover:opacity-100" alt="" />
+                </div>
+                <div
+                  class="swiper-button-prev group bottom-0 left-auto right-1/2 top-auto mr-0 h-16 w-16 bg-gray-300 bg-opacity-30">
+                  <img src="../image/arrow.svg"
+                    class="text-gray-500 opacity-60 hover:opacity-100 group-hover:opacity-100"
+                    style="transform: rotate(180deg)" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="s2">
+    <div class="container mx-auto relative py-24 lg:px-12 md:px-5 px-12">
+      <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-12">
+        <!-- Content -->
+        <div class="md:order-2">
+          <h2 class="mb-2 mt-5 text-4xl font-bold leading-[1.3em] tracking-wide">
+            關於又華
+          </h2>
+          <div class="mt-7 grid grid-cols-2 gap-x-3 gap-y-7">
+            <!-- Box 1 -->
+            <div class="flex flex-col items-start">
+              <div
+                class="relative inline-block overflow-hidden rounded-full border border-gray-700 p-2.5 after:absolute after:right-2/4 after:top-8 after:-z-10 after:block after:h-full after:w-[140%] after:translate-x-1/2 after:rounded-full after:bg-teal-light">
+                <img src="../image/home-s2-icon1.svg" alt="" class="inline-block h-[29px] w-[30px] align-middle" />
+              </div>
+              <div class="mb-2 mt-2 text-[18px] font-semibold leading-[1.3em] text-gray-800">
+                公司簡介
+              </div>
+              <p class="my-2 text-[16px]  leading-[1.45em] text-gray-800">
+                又華股份有限公司於2004年跨入綠色能源領域，專業生產包含工業用潤滑油、橡膠加工油、環保可塑劑、塗料加工油、鍋爐燃料油、汽機車用油精等多項植物性油品
+              </p>
+              <a href="./about.html"
+                class="duration-350 mt-4 flex items-center pr-5 text-teal transition-opacity hover:opacity-70">
+                <p class="font-semibold">查看更多</p>
+                <svg class="ml-2 h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+            <!-- Box 2 -->
+            <div class="flex flex-col items-start">
+              <div
+                class="relative inline-block overflow-hidden rounded-full border border-gray-700 p-2.5 after:absolute after:right-2/4 after:top-8 after:-z-10 after:block after:h-full after:w-[140%] after:translate-x-1/2 after:rounded-full after:bg-teal-light">
+                <img src="../image/home-s2-icon2.svg" alt=""
+                  class="relative right-0.5 inline-block h-[30px] w-[30px] align-middle" />
+              </div>
+              <div class="mb-2 mt-2 text-[18px] font-semibold leading-[1.3em] text-gray-800">
+                歷史沿革
+              </div>
+              <p class="my-2 text-[16px]  leading-[1.45em] text-gray-800">
+                2007年
+                正式改制又華股份有限公司，擁有自家的生產工廠、研發實驗室和產品檢測室，從事脂肪酸甲酯生產系統設備製造與油品生產，成為台灣中油的油品供應商。
+              </p>
+              <a href="./history.html"
+                class="duration-350 mt-4 flex items-center pr-5 text-teal transition-opacity hover:opacity-70">
+                <p class="font-semibold">查看更多</p>
+                <svg class="ml-2 h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--Image-->
+        <div class="md:order-1">
+          <div class="grid grid-cols-2 items-center justify-center gap-4">
+            <img src="../image/home-s2-1.png" alt="" class="inline-block w-full max-w-full object-cover align-middle" />
+            <img src="../image/home-s2-2.png" alt="" class="inline-block w-full max-w-full object-cover align-middle" />
+            <img src="../image/home-s2-3.png" alt="" class="inline-block w-full max-w-full object-cover align-middle" />
+            <img src="../image/home-s2-4.png" alt="" class="inline-block w-full max-w-full object-cover align-middle" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="s3">
+    <div class="img-area relative pt-12 text-base">
+      <div class="relative z-10 py-12 text-center md:py-24 px-12">
+        <h1 class="font-display mb-6  text-3xl font-bold text-white md:text-4xl lg:text-5xl xl:text-6xl">
+          ESG永續
+        </h1>
+        <p class="mb-10 text-base font-bold text-white md:text-lg">
+          又華股份有限公司
+          <br />自2004年跨入綠色能源領域，<br />秉持永續經營與愛護地球的經營理念，<br />開發出多項替代石化的綠能環保油品，<br />從規劃打造油品生產設備，<br />到選定植物油原料，<br />嚴守生產標準且技術領先同業！
+        </p>
+        <a class="transition-opacity hover:opacity-70 duration-350 flex items-center justify-center gap-3 px-8 py-4 text-sm text-white"
+          href="./esg.html">深入了解
+          <div
+            class="relative flex h-12 w-12 items-center justify-center rounded-full border border-white p-2.5 text-center">
+            <svg class="h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+              class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </div>
+        </a>
+      </div>
+      <img class="absolute inset-0 h-full w-full object-cover" src="../image/home-s3.png" alt="" />
+    </div>
+  </section>
+  <section class="s4">
+    <div class="container mx-auto relative py-24 lg:px-12 md:px-5 px-12">
+      <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-12 ">
+        <!-- Content -->
+        <div class="lg:pl-20 lg:pr-12">
+          <h2 class="mb-2 mt-5 text-4xl font-bold leading-[1.3em] tracking-wide ">
+            產品介紹
+          </h2>
+          <p class="mb-[10px] mt-[10px] text-[20px]  leading-[1.45] ">
+            產品跨足橡膠業/塑膠業/石化業/油漆與塗料業/環保油墨/汽車潤滑油品/燃料油添加劑等相關周邊產業。
+          </p>
+          <ul>
+            <li>● 橡膠加工油</li>
+            <li>● 環保可塑劑</li>
+            <li>● 環保基礎油</li>
+            <li>● 塗料加工油</li>
+            <li>● 鍋爐燃料油</li>
+            <li>● 潤滑油酯類添加劑</li>
+            <li>● 減磨劑、極壓劑</li>
+            <li>● G-MARS巨瑪斯車用油精</li>
+          </ul>
+          <a href="./products.html"
+            class="duration-350 mt-4 flex items-center pr-5 text-teal transition-opacity hover:opacity-70">
+            <p class="font-semibold">更多產品</p>
+            <svg class="ml-2 h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+              class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+        <!--Image-->
+        <div class="tablet:hidden block">
+          <div class="grid grid-cols-2 items-center justify-center gap-4">
+            <img src="../image/home-s4-1.png" alt="" class="inline-block w-full max-w-full object-cover align-middle" />
+            <img src="../image/home-s4-2.png" alt="" class="inline-block w-full max-w-full object-cover align-middle" />
+            <img src="../image/home-s4-3.png" alt=""
+              class="col-span-2 inline-block w-full max-w-full object-cover align-middle" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="s5">
+    <div class="container relative z-20 mx-auto py-24 md:px-5 lg:px-32  px-12">
+      <h2 class="mb-8 mt-5 text-4xl font-bold leading-[1.3em] tracking-wide">
+        產品應用
+      </h2>
+      <div class="flex flex-grow flex-wrap md:flex-nowrap gap-y-5">
+        <div class="block">
+          <a class="relative block text-white" href="./application.html">
+            <article>
+              <div class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
+                <img class="h-full max-w-full object-cover" src="../image/home-s5-1.png" />
+              </div>
+              <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-brown pl-8 pr-7 pt-10">
+                <p class="mb-4 mt-0 text-xl font-bold">橡膠產業</p>
+                <div class="max-w-[9rem] overflow-hidden text-sm font-medium">
+                  <p class="line-clamp-3 max-w-36 overflow-hidden text-sm font-medium" style="
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            text-overflow: ellipsis;
+                          ">
+                    · 環保可塑劑
+                    <br />
+                    · 膠化促進劑
+                    <br />
+                    · 環氧脂肪酸甲酯
+                    <br />
+                    · 環氧脂肪酸甲酯
+                  </p>
+                </div>
+              </div>
+            </article>
+            <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
+              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+            </svg>
+          </a>
+        </div>
+        <div class="block">
+          <a class="relative block text-white" href="./application.html">
+            <article>
+              <div class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
+                <img class="h-full max-w-full object-cover" src="../image/home-s5-2.png" />
+              </div>
+              <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-pink pl-8 pr-7 pt-10">
+                <p class="mb-4 mt-0 text-xl font-bold">PU塗料業</p>
+                <div class="max-w-[9rem] overflow-hidden text-sm font-medium">
+                  <p class="line-clamp-3 max-w-36 overflow-hidden text-sm font-medium" style="
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            text-overflow: ellipsis;
+                          ">
+                    · 蓖麻基加工油
+                    <br />
+                    · 水性塗料添加劑
+                    <br />
+                    · 環保油墨添加劑
+                    <br />
+                    · 環保油墨添加劑
+                  </p>
+                </div>
+              </div>
+            </article>
+            <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
+              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+            </svg>
+          </a>
+        </div>
+        <div class="block">
+          <a class="relative block  text-white" href="./application.html">
+            <article>
+              <div s class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
+                <img class="h-full max-w-full object-cover" src="../image/home-s5-3.png" />
+              </div>
+              <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-yellow_green pl-8 pr-7 pt-10">
+                <p class="mb-4 mt-0 text-xl font-bold">車用產業</p>
+                <p class="line-clamp-3 max-w-40 overflow-hidden text-sm font-medium" style="
+                          display: -webkit-box;
+                          -webkit-box-orient: vertical;
+                          text-overflow: ellipsis;
+                        ">
+                  · 減磨劑
+                  <br />
+                  · 單酯、雙酯機油添加劑
+                  <br />
+                  · 汽油添加劑
+                  <br />
+                  · 汽油添加劑
+                </p>
+              </div>
+            </article>
+            <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
+              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="s6">
+    <div class="container relative z-20 mx-auto py-24 md:px-5 lg:px-32 px-12">
+      <h2 class="mb-8 mt-5 text-4xl font-bold leading-[1.3em] tracking-wide">
+        媒體專區
+      </h2>
+      <div class="flex flex-wrap md:flex-nowrap gap-y-10">
+        <div class="block pl-7 pr-7">
+          <a class="md:max-w[500px] relative block bg-transparent" href="./media.html">
+            <div class="flex">
+              <div class="mr-4 flex self-end" style="writing-mode: vertical-rl">
+                <span class="mb-3 text-4xl font-bold">04</span>
+                <div style="margin-right: -2px">
+                  <span class="text-xs font-medium" style="letter-spacing: 0">2024</span>
+                  <span class="block whitespace-nowrap text-base font-semibold">9月</span>
+                </div>
+              </div>
+              <div class="relative w-full" style="aspect-ratio: 300 / 225">
+                <button
+                  class="absolute bottom-[-10px] right-10 rounded-r-md bg-gradient-to-br from-gradient-red to-gradient-orange px-2 py-1 text-sm text-white">
+                  News
+                </button>
+                <img src="../image/home-s6-1.png" alt="" class="h-full object-cover" />
+              </div>
+            </div>
+            <p class="mt-10 pr-[11%] text-left text-3xl">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </p>
+            <svg class="absolute bottom-0 right-0 h-7 w-7" viewBox="0 0 18 18">
+              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+            </svg>
+          </a>
+        </div>
+        <div class="block pl-7 pr-7">
+          <a class="md:max-w[500px] relative block bg-transparent" href="./media.html">
+            <div class="flex">
+              <div class="mr-4 flex self-end" style="writing-mode: vertical-rl">
+                <span class="mb-3 text-4xl font-bold">04</span>
+                <div style="margin-right: -2px">
+                  <span class="text-xs font-medium" style="letter-spacing: 0">2024</span>
+                  <span class="block whitespace-nowrap text-base font-semibold">9月</span>
+                </div>
+              </div>
+              <div class="relative w-full" style="aspect-ratio: 300 / 225">
+                <button
+                  class="absolute bottom-[-10px] right-10 rounded-r-md bg-gradient-to-br from-gradient-red to-gradient-orange px-2 py-1 text-sm text-white">
+                  News
+                </button>
+                <img src="../image/home-s6-2.png" alt="" class="h-full object-cover" />
+              </div>
+            </div>
+            <p class="mt-10 pr-[11%] text-left text-3xl">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </p>
+            <svg class="absolute bottom-0 right-0 h-7 w-7" viewBox="0 0 18 18">
+              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+            </svg>
+          </a>
+        </div>
+        <div class="block pl-7 pr-7">
+          <a class="md:max-w[500px] relative block bg-transparent" href="./media.html">
+            <div class="flex">
+              <div class="mr-4 flex self-end" style="writing-mode: vertical-rl">
+                <span class="mb-3 text-4xl font-bold">04</span>
+                <div style="margin-right: -2px">
+                  <span class="text-xs font-medium" style="letter-spacing: 0">2024</span>
+                  <span class="block whitespace-nowrap text-base font-semibold">9月</span>
+                </div>
+              </div>
+              <div class="relative w-full" style="aspect-ratio: 300 / 225">
+                <button
+                  class="absolute bottom-[-10px] right-10 rounded-r-md bg-gradient-to-br from-gradient-red to-gradient-orange px-2 py-1 text-sm text-white">
+                  Blog
+                </button>
+                <img src="../image/home-s6-3.png" alt="" class="h-full object-cover" />
+              </div>
+            </div>
+            <p class="mt-10 pr-[11%] text-left text-3xl">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </p>
+            <svg class="absolute bottom-0 right-0 h-7 w-7" viewBox="0 0 18 18">
+              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="s7">
+    <div class="container relative mx-auto py-24 md:px-5 lg:px-32 px-12">
+      <h2 class="mb-8 mt-5 text-4xl font-bold leading-[1.3em] tracking-wide">
+        品質檢驗
+      </h2>
+      <div class="relative z-10 h-full whitespace-nowrap grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="inline-block w-full whitespace-normal bg-teal-lightest p-10">
+          <div class="h-full">
+            <div class="flex items-center">
+              <div
+                class="flex h-20 w-20 items-center justify-center rounded-3xl border bg-gradient-to-b from-gradient-teal_dk to-gradient-teal_lt">
+                <img src="../image/home-s7-icon1.svg" alt="" />
+              </div>
+              <div class="author-details" style="margin-left: 20px">
+                <h4 class="text-xl font-bold text-gray-900 leading-5">認證</h4>
+              </div>
+            </div>
+            <p>
+              蓖麻酯機油減磨添加劑研發成功，經過一年多的第三方公正單位測試與認證後，開始量產，供應給機油調合廠使用並提供機油添加劑代工服務。
+            </p>
+            <a href="./qc.html#tab1"
+              class="transition-opacity hover:opacity-70 duration-350 flex items-center gap-3 py-4 text-sm text-gray-800">查看更多
+              <div
+                class="relative flex h-12 w-12 items-center justify-center rounded-full border border-current p-2.5 text-center">
+                <svg class="h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+                  class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="inline-block w-full whitespace-normal bg-teal-lightest p-10">
+          <div class="h-full">
+            <div class="flex items-center">
+              <div
+                class="flex h-20 w-20 items-center justify-center rounded-3xl border bg-gradient-to-b from-gradient-teal_dk to-gradient-teal_lt">
+                <img src="../image/home-s7-icon2.svg" alt="" />
+              </div>
+              <div class="author-details" style="margin-left: 20px">
+                <h4 class="text-xl font-bold text-gray-900 leading-5">檢驗報告</h4>
+              </div>
+            </div>
+            <p>
+              擁有自家的生產工廠、研發實驗室和產品檢測室，從事脂肪酸甲酯生產系統設備製造與油品生產，成為台灣中油的油品供應商。
+            </p>
+            <a href="./qc.html#tab2"
+              class="transition-opacity hover:opacity-70 duration-350 flex items-center gap-3 py-4 text-sm text-gray-800">查看更多
+              <div
+                class="relative flex h-12 w-12 items-center justify-center rounded-full border border-current p-2.5 text-center">
+                <svg class="h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+                  class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="inline-block w-full whitespace-normal bg-teal-lightest p-10">
+          <div class="h-full">
+            <div class="flex items-center">
+              <div
+                class="flex h-20 w-20 items-center justify-center rounded-3xl border bg-gradient-to-b from-gradient-teal_dk to-gradient-teal_lt">
+                <img src="../image/home-s7-icon3.svg" alt="" />
+              </div>
+              <div class="author-details" style="margin-left: 20px">
+                <h4 class="text-xl font-bold text-gray-900 leading-5">得獎項目</h4>
+              </div>
+            </div>
+            <p>
+              擁有最專業的植物油品開發團隊及自動化的生產設備，產品備受各界肯定，並獲得創新產品獎項及創新產業獎項。
+            </p>
+            <a href="./qc.html#tab3"
+              class="transition-opacity hover:opacity-70 duration-350 flex items-center gap-3 py-4 text-sm text-gray-800">查看更多
+              <div
+                class="relative flex h-12 w-12 items-center justify-center rounded-full border border-current p-2.5 text-center">
+                <svg class="h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+                  class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="relative border border-gray-200 pb-0 pt-16">
+    <div class="container mx-auto relative">
+      <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
+        <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
+          after:w-[113%] after:hover:top-0 after:transition-all ">
+          <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+        </div>
+      </a>
+      <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
+        <ul class="m-0 grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-[30px] p-0">
+          <li class="text-base  leading-relaxed">
+            <a href="./products.html">
+              <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                產品介紹
+              </div>
+            </a>
+            <ul class="mb-3 mt-0 pl-0 text-gray-700">
+              <li class="text-[16px]  leading-7">
+                <a href="./products-1.html"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">塑膠PVC添加劑</a>
+              </li>
+              <li class="text-[16px]  leading-7">
+                <a href="./products-1.html"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">油漆塗料加工油</a>
+              </li>
+            </ul>
+          </li>
+          <li class="text-base  leading-relaxed">
+            <a href="./application.html">
+              <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                產品應用
+              </div>
+            </a>
+            <ul class="mb-3 mt-0 pl-0 text-gray-700">
+              <li class="text-[16px]  leading-7">
+                <a href="./application-1.html"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">塑橡膠產業</a>
+              </li>
+              <li class="text-[16px]  leading-7">
+                <a href="./application-1.html"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">車用產業</a>
+              </li>
+            </ul>
+          </li>
+          <li class="text-base  leading-relaxed ">
+            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+              品質檢驗
+            </div>
+            <ul class="mb-3 mt-0 pl-0 text-gray-700">
+              <li class="text-[16px]  leading-7">
+                <a href="./qc.html#tab1"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">認證</a>
+              </li>
+              <li class="text-[16px]  leading-7">
+                <a href="./qc.html#tab2"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">檢測報告</a>
+              </li>
+              <li class="text-[16px]  leading-7">
+                <a href="./qc.html#tab3"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">得獎獎項</a>
+              </li>
+            </ul>
+            <a href="./media.html">
+              <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                媒體專區
+              </div>
+            </a>
+            <ul class="mb-[10px] mt-0 list-none pl-0">
+              <li class="text-[16px] leading-7">
+                <a href="./media.html#tab2"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">新聞消息</a>
+              </li>
+              <li class="text-[16px] leading-7">
+                <a href="./media.html#tab3"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">技術文章</a>
+              </li>
+            </ul>
+          </li>
+          <li class="text-base  leading-relaxed">
+            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+              關於又華
+            </div>
+            <ul class="mb-3 mt-0 pl-0 text-gray-700">
+              <li class="text-[16px]  leading-7">
+                <a href="./about.html"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">公司簡介</a>
+              </li>
+              <li class="text-[16px]  leading-7">
+                <a href="./history.html"
+                  class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">歷史沿革</a>
+              </li>
+            </ul>
+            <a href="./esg.html">
+              <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                ESG永續
+              </div>
+            </a>
+            <a href="./contact.html">
+              <div class="mb-4 mt-6 text-xl font-bold leading-5 text-teal-strong">
+                聯絡我們
+              </div>
+            </a>
+          </li>
+          <li class="text-base  leading-relaxed">
+            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+              Connect with Us
+            </div>
+            <ul class="mb-3 mt-0 pl-0 text-gray-700">
+              <li class="text-[16px]  leading-7 ">
+                <a href="#" target="_blank"
+                  class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                  <img src="../image/footer-fb.svg" alt="" class="mr-3 h-8 w-8" />
+                  <div>Facebook</div>
+                </a>
+              </li>
+              <li class="text-[16px]  leading-7">
+                <a href="#" target="_blank"
+                  class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                  <img src="../image/footer-line.svg" alt="" class="mr-3 h-8 w-8" />
+                  <div>LINE</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-teal-strong py-8 text-white">
+      <div class="container relative z-20 mx-auto ">
+        <div class="row pl-14 pr-14 flex md:justify-between md:flex-nowrap flex-wrap">
+          <div>
+            <div>
+              Designed by Lets
+              <span><a href="https://www.letsmedia.tw/" target="_blank">Lets Media</a>
+                <a href="https://www.ezb2b.com/" target="_blank">EZB2B</a></span>
+            </div>
+          </div>
+          <div>
+            Copyright © 2024 又華股份有限公司 版權所有.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/swiper.js"></script>
+  <script src="../js/common.js"></script>
+</body>
+
+</html>

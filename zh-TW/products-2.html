@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>產品介紹-2</title>
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .swiper2.swiper-button-next,
+        .swiper3.swiper-button-next {
+            background-image: url(../image/slider-arrow.svg);
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+            width: 50px;
+        }
+
+        .swiper2.swiper-button-next::after,
+        .swiper3.swiper-button-next::after {
+            display: none;
+        }
+
+        .swiper2.swiper-button-prev,
+        .swiper3.swiper-button-prev {
+            background-image: url(../image/slider-arrow.svg);
+            transform: rotate(-180deg);
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+            width: 50px;
+        }
+
+        .swiper2.swiper-button-prev::after,
+        .swiper3.swiper-button-prev::after {
+            display: none;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            display: none;
+        }
+
+        @media (max-width:640px) {
+
+            .mySwiper2 .swiper-wrapper,
+            .mySwiper3 .swiper-wrapper {
+                transform: unset !important;
+                flex-direction: column;
+                align-items: center !important;
+            }
+
+            .mySwiper2 .swiper-slide,
+            .mySwiper3 .swiper-slide {
+                margin-right: 0 !important;
+                width: 60% !important;
+                margin-bottom: 1rem;
+            }
+
+            .swiper2.swiper-button-next,
+            .swiper2.swiper-button-prev,
+            .swiper3.swiper-button-next,
+            .swiper3.swiper-button-prev {
+                display: none;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body id="products-2" class="bg-white overflow-x-hidden">
+    <nav class="text-gray-700 border-b border-b-gray-100 drop-shadow relative z-20">
+        <div class="container mx-auto items-center justify-around px-4 md:flex">
+            <div class="items-center justify-between gap-6 md:flex">
+                <!-- Logo -->
+                <div class="flex w-full items-center justify-between md:w-auto">
+                    <a href="./index.html" class="flex-1 px-2 py-5 font-bold text-white">
+                        <img src="../image/logo.svg" alt="又華LOGO" />
+                    </a>
+                    <!-- mobile menu icon -->
+                    <div class="flex items-center md:hidden">
+                        <button type="button" class="mobile-menu-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="navigation-menu hidden flex-col items-center justify-start  pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./products.html">
+                                <span class="pointer-events-none select-none">產品介紹</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu md:absolute relative w-full md:w-48 hidden   bg-white text-black mt-2">
+                            <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+                            <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+                            <a href="./products-1.html" class="hover:bg-gray-100  block px-6 py-2">巨瑪斯車用油添加劑</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./application.html">
+                                <span class="pointer-events-none select-none">產品應用</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+
+                        </button>
+                        <div
+                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48 bg-white text-black mt-2">
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                        </div>
+                    </div>
+                    <a href="./esg.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">ESG永續</a>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none">品質檢驗</span>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./qc.html#tab1" class="hover:bg-gray-100  block px-6 py-2">認證</a>
+                            <a href="./qc.html#tab2" class="hover:bg-gray-100  block px-6 py-2">檢驗報告</a>
+                            <a href="./qc.html#tab3" class="hover:bg-gray-100  block px-6 py-2">得獎項目</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./media.html">
+                                <span class="pointer-events-none select-none">媒體專區</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+
+                        </button>
+                        <div
+                            class="md:absolute relative   dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./media.html#tab2" class="hover:bg-gray-100  block px-6 py-2">新聞消息</a>
+                            <a href="./media.html#tab3" class="hover:bg-gray-100  block px-6 py-2">技術文章</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none">關於又華</span>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="md:absolute relative dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./about.html" class="hover:bg-gray-100  block px-6 py-2">公司簡介</a>
+                            <a href="./history.html" class="hover:bg-gray-100  block px-6 py-2">歷史沿革</a>
+                        </div>
+                    </div>
+                    <a href="./contact.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">聯絡我們</a>
+                </div>
+            </div>
+            <div
+                class="navigation-menu hidden flex-col items-center gap-5 pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                <a href="./inquiry.html" class="flex-1 px-2 py-5 font-bold text-white">
+                    <img src="../image/bag.svg" alt="" />
+                </a>
+                <button type="button" class="rounded-sm bg-teal-strong px-4 py-2 text-white hover:text-white">
+                    <a href="#">中文</a> / <a href="#">EN</a>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="banner">
+        <div class="relative pb-24 pt-24">
+            <div class="container relative z-20 mx-auto flex justify-center  px-12 pb-8">
+                <div class="mx-auto  max-w-xl text-center">
+                    <h1 class="my-5 text-5xl font-bold leading-tight text-white">巨瑪斯車用油添加劑</h1>
+                </div>
+            </div>
+            <img src="../image/products-bn.png" loading="lazy" alt=""
+                class="absolute inset-0 z-0 h-full w-full object-cover" />
+        </div>
+    </section>
+    <section class="content ">
+        <div class="container relative  mx-auto lg:py-28 lg:px-32 p-10">
+            <div class="w-full grid sm:grid-cols-7  grid-cols-1  gap-y-10 lg:gap-x-36 gap-x-10">
+                <div class="place-self-center sm:col-span-3 swiper mySwiper1 border border-gray-200">
+                    <div class="swiper-wrapper ">
+                        <div class="swiper-slide  relative">
+                            <img class="w-full h-full object-contain" src="../image/products2-1.png" alt="">
+                        </div>
+                        <div class="swiper-slide"><img class="w-full h-full object-contain"
+                                src="../image/products2-1.png" alt="">
+                        </div>
+                        <div class="swiper-slide"><img class="w-full h-full object-contain"
+                                src="../image/products2-1.png" alt="">
+                        </div>
+                    </div>
+                    <div
+                        class="swiper1 swiper-button-next group bottom-0 left-[4rem] top-auto ml-0 h-16 w-16 bg-gray-300 bg-opacity-30 border-l border-gray-100 border-opacity-50">
+                        <img src="../image/arrow.svg" class="text-gray-500 opacity-60 group-hover:opacity-100" alt="" />
+                    </div>
+                    <div
+                        class="swiper1 swiper-button-prev group bottom-0 left-0  top-auto mr-0 h-16 w-16 bg-gray-300 bg-opacity-30">
+                        <img src="../image/arrow.svg"
+                            class="text-gray-500 opacity-60 hover:opacity-100 group-hover:opacity-100"
+                            style="transform: rotate(180deg)" alt="" />
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
+                    <div class="flex ml-1">
+                        <div class="-skew-x-12 bg-gray-800 inline-block px-3 py-1">
+                            <div class="skew-x-12">
+                                <span class="text-base font-semibold text-teal-strong  mr-2">型號</span>
+                                <span class="text-basefont-semibold  text-white">GMARS688</span>
+                            </div>
+                        </div>
+                        <div class="-skew-x-12 inline-block text-gray-800 border border-teal px-3 py-1">
+                            <button type="button" class="skew-x-12">
+                                <span>加入購物車</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6 inline-block">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-b  from-gradient-teal_lt to-gradient-teal_dk">
+                        <h3 class="text-xl font-semibold mb-4  p-3 text-white">機油減磨添加劑</h3>
+                    </div>
+                    <div class="flex flex-col space-y-4">
+                        <div class="w-full">
+                            <div class="flex border-b border-teal pb-3">
+                                <div class="font-semibold text-teal w-1/4">適用範圍</div>
+                                <div>各式發動機(汽柴油車均適用)。</div>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex border-b border-teal pb-3">
+                                <div class="font-semibold text-teal w-1/4">說明</div>
+                                <div>●不含固態及金屬添加劑<br>
+                                    ●獨特雙極性油膜，冷車啟動防護<br>
+                                    ●耐高溫高剪切，延緩機油衰敗<br>
+                                    ●拉轉順暢，提升動力<br>
+                                    ●強化潤滑減磨，穩定油溫<br>
+                                    ●分解油泥，降低廢氣排放<br>
+                                    ●符合歐洲LOW SAPS規範</div>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex border-b border-teal pb-3">
+                                <div class="font-semibold text-teal w-1/4">添加方式</div>
+                                <div>3-5L添加1瓶。</div>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex border-b border-teal pb-3">
+                                <div class="font-semibold text-teal w-1/4">包裝</div>
+                                <div>237mL/瓶。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-20 lg:px-48">
+                <div class="w-full">
+                    <div
+                        class="-skew-x-12 bg-gradient-to-b  ml-1 from-gradient-teal_lt to-gradient-teal_dk inline-block">
+                        <h3 class="skew-x-12 text-base font-semibold  py-2 px-4 text-white">特性說明</h3>
+                    </div>
+                    <div class="flex flex-col space-y-4 animate__animated animate__fadeInLeft">
+                        <div class="w-full border-t border-teal font-semibold bg-gray-100 px-5 py-10">
+                            G-Mars巨瑪斯機油減磨添加劑，不含重金屬抗磨劑成分，使用蓖麻油分子重組改質，去除膠質，強化油膜及油品耐用度，提升抗氧化能力，不但享受激駕拉轉順暢感受，更不傷引擎，提供全方
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-teal-dark pt-14">
+            <div class="relative w-full h-full py-12">
+                <h2
+                    class="mb-5 text-2xl font-bold leading-[1.3em] tracking-wide absolute sm:left-24 sm:translate-x-0 left-1/2 -translate-x-1/2 top-[-16px] text-white border-b border-white border-opacity-20 pb-2 block w-full text-center sm:text-left">
+                    相關產品
+                </h2>
+                <div class="swiper mySwiper2 text-white">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group " href="#">
+                                    <div
+                                        class="relative pt-[100%] border border-b-gray-200 rounded-sm overflow-hidden bg-white">
+                                        <img class="scale-90 transition duration-200 ease-out transform group-hover:scale-100 object-cover absolute inset-0 h-full w-full"
+                                            src="../image/products2-1.png" alt="">
+                                    </div>
+                                    <div class="mt-3">
+                                        <span
+                                            class="group-hover:underline group-hover:underline-offset-4 group-hover:decoration-1 group-hover:decoration-gray-400  mr-3">
+                                            機油減磨添加劑
+                                        </span>
+                                        <span class="text-teal text-sm">GMARS688</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group" href="#">
+                                    <div
+                                        class="relative pt-[100%] border border-b-gray-200 rounded-sm overflow-hidden bg-white">
+                                        <img class="scale-90 transition duration-200 ease-out transform group-hover:scale-100 object-cover absolute inset-0 h-full w-full"
+                                            src="../image/products2-2.png" alt="">
+                                    </div>
+                                    <div class="mt-3">
+                                        <span
+                                            class="group-hover:underline group-hover:underline-offset-4 group-hover:decoration-1 group-hover:decoration-gray-400 mr-3">
+                                            汽/柴油效能提升劑
+                                        </span>
+                                        <span class="text-teal  text-sm">GMARS721</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group" href="#">
+                                    <div
+                                        class="relative pt-[100%] border border-b-gray-200 rounded-sm overflow-hidden bg-white">
+                                        <img class="scale-90 transition duration-200 ease-out transform group-hover:scale-100 object-cover absolute inset-0 h-full w-full"
+                                            src="../image/products2-3.png" alt="">
+                                    </div>
+                                    <div class="mt-3">
+                                        <span
+                                            class="group-hover:underline group-hover:underline-offset-4 group-hover:decoration-1 group-hover:decoration-gray-400 mr-3">
+                                            引擎油封止漏劑
+                                        </span>
+                                        <span class="text-teal  text-sm">GMARS652</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group" href="#">
+                                    <div
+                                        class="relative pt-[100%] border border-b-gray-200 rounded-sm overflow-hidden bg-white">
+                                        <img class="scale-90 transition duration-200 ease-out transform group-hover:scale-100 object-cover absolute inset-0 h-full w-full"
+                                            src="../image/products2-4.png" alt="">
+                                    </div>
+                                    <div class="mt-3">
+                                        <span
+                                            class="group-hover:underline group-hover:underline-offset-4 group-hover:decoration-1 group-hover:decoration-gray-400 mr-3">
+                                            引擎油泥清洗劑
+                                        </span>
+                                        <span class="text-teal  text-sm">GMARS899</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group" href="#">
+                                    <div
+                                        class="relative pt-[100%] border border-b-gray-200 rounded-sm bg-white overflow-hidden">
+                                        <img class="scale-90 transition duration-200 ease-out transform group-hover:scale-100 object-cover absolute inset-0 h-full w-full"
+                                            src="../image/products2-5.png" alt="">
+                                    </div>
+                                    <div class="mt-3">
+                                        <span
+                                            class="group-hover:underline group-hover:underline-offset-4 group-hover:decoration-1 group-hover:decoration-gray-400 mr-3">
+                                            G1引擎機油添加劑
+                                        </span>
+                                        <span class="text-teal  text-sm">G1-891</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group" href="#">
+                                    <div
+                                        class="relative pt-[100%] border border-b-gray-200 rounded-sm bg-white overflow-hidden">
+                                        <img class="scale-90 transition duration-200 ease-out transform group-hover:scale-100 object-cover absolute inset-0 h-full w-full"
+                                            src="../image/products2-6.png" alt="">
+                                    </div>
+                                    <div class="mt-3">
+                                        <span
+                                            class="group-hover:underline group-hover:underline-offset-4 group-hover:decoration-1 group-hover:decoration-gray-400 mr-3">
+                                            G1燃油系統清潔劑
+                                        </span>
+                                        <span class="text-teal  text-sm"> G1-808</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group" href="#">
+                                    <div
+                                        class="relative pt-[100%] border border-b-gray-200 rounded-sm bg-white overflow-hidden">
+                                        <img class="scale-90 transition duration-200 ease-out transform group-hover:scale-100 object-cover absolute inset-0 h-full w-full"
+                                            src="../image/products2-7.png" alt="">
+                                    </div>
+                                    <div class="mt-3">
+                                        <span
+                                            class="group-hover:underline group-hover:underline-offset-4 group-hover:decoration-1 group-hover:decoration-gray-400 mr-3">
+                                            G1燃油動力提升劑
+                                        </span>
+                                        <span class="text-teal  text-sm">G1-853</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper2 swiper-button-next absolute right-10 top-0"></div>
+                <div class="swiper2 swiper-button-prev absolute right-28 left-auto top-0"></div>
+            </div>
+            <div class="relative w-full h-full py-12 mt-10">
+                <h2
+                    class="mb-5 text-3xl font-bold leading-[1.3em] tracking-wide absolute sm:left-24 sm:translate-x-0 left-1/2 -translate-x-1/2 top-[-16px]  text-white">
+                    其他產品分類
+                </h2>
+                <div class="swiper mySwiper3 text-white">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group w-full h-full z-10" href="#">
+                                    <div class="pt-[100%] relative rounded-sm overflow-hidden bg-black ">
+                                        <img class="absolute inset-0 w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                                            src="../image/products-1.png">
+                                    </div>
+                                    <div class="relative mt-5 pr-9">
+                                        <h3 class="relative text-xl mb-2 font-semibold text-current">塑膠PVC添加劑</h3>
+                                        <div class="absolute w-7 h-7 right-0 top-0 bottom-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1" stroke="currentColor"
+                                                class="transition-colors size-7 group-hover:fill-teal-strong group-hover:stroke-none ">
+                                                <path class="group-hover:stroke-white stroke-teal"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group w-full h-full z-10" href="#">
+                                    <div class="pt-[100%] relative rounded-sm overflow-hidden bg-black">
+                                        <img class="absolute inset-0 w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                                            src="../image/products-2.png">
+                                    </div>
+                                    <div class="relative mt-5 pr-9">
+                                        <h3 class="relative text-xl mb-2 font-semibold text-current">油漆塗料加工油</h3>
+                                        <div class="absolute w-7 h-7 right-0 top-0 bottom-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1" stroke="currentColor"
+                                                class="transition-colors size-7 group-hover:fill-teal-strong group-hover:stroke-none ">
+                                                <path class="group-hover:stroke-white stroke-teal"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group w-full h-full z-10" href="#">
+                                    <div class="pt-[100%] relative rounded-sm overflow-hidden bg-black">
+                                        <img class="absolute inset-0 w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                                            src="../image/products-3.png">
+                                    </div>
+                                    <div class="relative mt-5 pr-9">
+                                        <h3 class="relative text-xl mb-2 font-semibold text-current">橡膠加工用油</h3>
+                                        <div class="absolute w-7 h-7 right-0 top-0 bottom-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1" stroke="currentColor"
+                                                class="transition-colors size-7 group-hover:fill-teal-strong group-hover:stroke-none ">
+                                                <path class="group-hover:stroke-white stroke-teal"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group w-full h-full z-10" href="#">
+                                    <div class="pt-[100%] relative rounded-sm overflow-hidden bg-black">
+                                        <img class="absolute inset-0 w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                                            src="../image/products-4.png">
+                                    </div>
+                                    <div class="relative mt-5 pr-9">
+                                        <h3 class="relative text-xl mb-2 font-semibold text-current">農業助劑</h3>
+                                        <div class="absolute w-7 h-7 right-0 top-0 bottom-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1" stroke="currentColor"
+                                                class="transition-colors size-7 group-hover:fill-teal-strong group-hover:stroke-none ">
+                                                <path class="group-hover:stroke-white stroke-teal"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group w-full h-full z-10" href="#">
+                                    <div class="pt-[100%] relative rounded-sm overflow-hidden bg-black">
+                                        <img class="absolute inset-0 w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                                            src="../image/products-5.png">
+                                    </div>
+                                    <div class="relative mt-5 pr-9">
+                                        <h3 class="relative text-xl mb-2 font-semibold text-current">鍋爐用油</h3>
+                                        <div class="absolute w-7 h-7 right-0 top-0 bottom-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1" stroke="currentColor"
+                                                class="transition-colors size-7 group-hover:fill-teal-strong group-hover:stroke-none ">
+                                                <path class="group-hover:stroke-white stroke-teal"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group w-full h-full z-10" href="#">
+                                    <div class="pt-[100%] relative rounded-sm overflow-hidden bg-black">
+                                        <img class="absolute inset-0 w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                                            src="../image/products-6.png">
+                                    </div>
+                                    <div class="relative mt-5 pr-9">
+                                        <h3 class="relative text-xl mb-2 font-semibold text-current">工業用油添加劑</h3>
+                                        <div class="absolute w-7 h-7 right-0 top-0 bottom-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1" stroke="currentColor"
+                                                class="transition-colors size-7 group-hover:fill-teal-strong group-hover:stroke-none ">
+                                                <path class="group-hover:stroke-white stroke-teal"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group w-full h-full z-10" href="#">
+                                    <div class="pt-[100%] relative rounded-sm overflow-hidden bg-black">
+                                        <img class="absolute inset-0 w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                                            src="../image/products-7.png">
+                                    </div>
+                                    <div class="relative mt-5 pr-9">
+                                        <h3 class="relative text-xl mb-2 font-semibold text-current">車用潤滑油添加劑</h3>
+                                        <div class="absolute w-7 h-7 right-0 top-0 bottom-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1" stroke="currentColor"
+                                                class="transition-colors size-7 group-hover:fill-teal-strong group-hover:stroke-none ">
+                                                <path class="group-hover:stroke-white stroke-teal"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative w-full text-left">
+                                <a class="block group w-full h-full z-10" href="#">
+                                    <div class="pt-[100%] relative rounded-sm overflow-hidden bg-black">
+                                        <img class="absolute inset-0 w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                                            src="../image/products-8.png">
+                                    </div>
+                                    <div class="relative mt-5 pr-9">
+                                        <h3 class="relative text-xl mb-2 font-semibold text-current">巨瑪斯車用油添加劑</h3>
+                                        <div class="absolute w-7 h-7 right-0 top-0 bottom-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1" stroke="currentColor"
+                                                class="transition-colors size-7 group-hover:fill-teal-strong group-hover:stroke-none ">
+                                                <path class="group-hover:stroke-white stroke-teal"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper3 swiper-button-next absolute right-10 top-0"></div>
+                <div class="swiper3 swiper-button-prev absolute right-28 left-auto top-0"></div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="relative border border-gray-200 pb-0 pt-16">
+        <div class="container mx-auto relative">
+            <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
+                <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
+              after:w-[113%] after:hover:top-0 after:transition-all ">
+                    <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+                </div>
+            </a>
+            <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
+                <ul class="m-0 grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-[30px] p-0">
+                    <li class="text-base  leading-relaxed">
+                        <a href="./products.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                產品介紹
+                            </div>
+                        </a>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./products-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">塑膠PVC添加劑</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./products-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">油漆塗料加工油</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <a href="./application.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                產品應用
+                            </div>
+                        </a>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./application-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">塑橡膠產業</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./application-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">車用產業</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed ">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            品質檢驗
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab1"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">認證</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab2"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">檢測報告</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab3"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">得獎獎項</a>
+                            </li>
+                        </ul>
+                        <a href="./media.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                媒體專區
+                            </div>
+                        </a>
+                        <ul class="mb-[10px] mt-0 list-none pl-0">
+                            <li class="text-[16px] leading-7">
+                                <a href="./media.html#tab2"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">新聞消息</a>
+                            </li>
+                            <li class="text-[16px] leading-7">
+                                <a href="./media.html#tab3"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">技術文章</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            關於又華
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./about.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">公司簡介</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./history.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">歷史沿革</a>
+                            </li>
+                        </ul>
+                        <a href="./esg.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                ESG永續
+                            </div>
+                        </a>
+                        <a href="./contact.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-teal-strong">
+                                聯絡我們
+                            </div>
+                        </a>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            Connect with Us
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7 ">
+                                <a href="#" target="_blank"
+                                    class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                                    <img src="../image/footer-fb.svg" alt="" class="mr-3 h-8 w-8" />
+                                    <div>Facebook</div>
+                                </a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="#" target="_blank"
+                                    class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                                    <img src="../image/footer-line.svg" alt="" class="mr-3 h-8 w-8" />
+                                    <div>LINE</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-teal-strong py-8 text-white">
+            <div class="container relative z-20 mx-auto ">
+                <div class="row pl-14 pr-14 flex md:justify-between md:flex-nowrap flex-wrap">
+                    <div>
+                        <div>
+                            Designed by Lets
+                            <span><a href="https://www.letsmedia.tw/" target="_blank">Lets Media</a>
+                                <a href="https://www.ezb2b.com/" target="_blank">EZB2B</a></span>
+                        </div>
+                    </div>
+                    <div>
+                        Copyright © 2024 又華股份有限公司 版權所有.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/swiper.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper1 = new Swiper(".mySwiper1", {
+            navigation: {
+                nextEl: ".swiper1.swiper-button-next",
+                prevEl: ".swiper1.swiper-button-prev",
+            },
+        });
+
+        var swiper = new Swiper(".mySwiper2", {
+            slidesPerView: 3,
+            slidesOffsetBefore: 100,
+            spaceBetween: 30,
+            direction: getDirection(),
+            navigation: {
+                nextEl: ".swiper2.swiper-button-next",
+                prevEl: ".swiper2.swiper-button-prev",
+            },
+            breakpoints: {
+                // 當寬度小於等於 640px 時
+                640: {
+                    direction: 'vertical', // 垂直呈現
+                    slidesPerView: 'auto', // 顯示所有 slides
+                    allowTouchMove: false, // 禁止滾動
+                },
+                641: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    direction: 'horizontal',
+                    allowTouchMove: true,
+                    slidesPerView: 4,
+                },
+                1024: {
+                    slidesPerView: 5,
+                },
+            },
+            on: {
+                resize: function () {
+                    swiper.changeDirection(getDirection());
+                },
+            },
+        });
+
+        var swiper = new Swiper(".mySwiper3", {
+            slidesPerView: 3,
+            slidesOffsetBefore: 100,
+            spaceBetween: 30,
+            direction: getDirection(),
+            navigation: {
+                nextEl: ".swiper3.swiper-button-next",
+                prevEl: ".swiper3.swiper-button-prev",
+            },
+            breakpoints: {
+                // 當寬度小於等於 640px 時
+                640: {
+                    direction: 'vertical', // 垂直呈現
+                    slidesPerView: 'auto', // 顯示所有 slides
+                    allowTouchMove: false, // 禁止滾動
+                },
+                641: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    direction: 'horizontal',
+                    allowTouchMove: true,
+                    slidesPerView: 4,
+                },
+                1024: {
+                    slidesPerView: 5,
+                },
+            },
+            on: {
+                resize: function () {
+                    swiper.changeDirection(getDirection());
+                },
+            },
+        });
+
+        function getDirection() {
+            var windowWidth = window.innerWidth;
+            var direction = "horizontal";
+
+            return direction;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>聯絡我們</title>
+    <style>
+        #map {
+            position: relative;
+            height: 450px;
+            width: 100%;
+        }
+
+        #map::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .custom-icon {
+            width: 42px;
+            height: 62px;
+            -webkit-mask: url('../image/location.svg') no-repeat center;
+            mask: url('../image/location.svg') no-repeat center;
+            mask-size: contain;
+        }
+
+        .reBtn {
+            width: 15px;
+            height: 15px;
+            top: 0;
+            right: 10px;
+            background: url("../image/re.svg") no-repeat;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .reBtn:hover {
+            transform: rotate(180deg);
+        }
+
+        .chktext {
+            height: 80%;
+            top: 0;
+            right: 12px;
+            position: relative;
+
+        }
+
+        .chktext img {
+            height: calc(100% - 5px);
+        }
+    </style>
+</head>
+
+<body id="contact" class="bg-gray-50">
+    <nav class="text-gray-700 border-b border-b-gray-100 drop-shadow relative z-20">
+        <div class="container mx-auto items-center justify-around px-4 md:flex">
+            <div class="items-center justify-between gap-6 md:flex">
+                <!-- Logo -->
+                <div class="flex w-full items-center justify-between md:w-auto">
+                    <a href="./index.html" class="flex-1 px-2 py-5 font-bold text-white">
+                        <img src="../image/logo.svg" alt="又華LOGO" />
+                    </a>
+                    <!-- mobile menu icon -->
+                    <div class="flex items-center md:hidden">
+                        <button type="button" class="mobile-menu-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="navigation-menu hidden flex-col items-center justify-start  pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./products.html">
+                                <span class="pointer-events-none select-none">產品介紹</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu md:absolute relative w-full md:w-48 hidden   bg-white text-black mt-2">
+                            <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+                            <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
+                            <a href="./products-1.html" class="hover:bg-gray-100  block px-6 py-2">巨瑪斯車用油添加劑</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./application.html">
+                                <span class="pointer-events-none select-none">產品應用</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+
+                        </button>
+                        <div
+                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48 bg-white text-black mt-2">
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                            <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
+                        </div>
+                    </div>
+                    <a href="./esg.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">ESG永續</a>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none">品質檢驗</span>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./qc.html#tab1" class="hover:bg-gray-100  block px-6 py-2">認證</a>
+                            <a href="./qc.html#tab2" class="hover:bg-gray-100  block px-6 py-2">檢驗報告</a>
+                            <a href="./qc.html#tab3" class="hover:bg-gray-100  block px-6 py-2">得獎項目</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <a href="./media.html">
+                                <span class="pointer-events-none select-none">媒體專區</span>
+                            </a>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+
+                        </button>
+                        <div
+                            class="md:absolute relative   dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./media.html#tab2" class="hover:bg-gray-100  block px-6 py-2">新聞消息</a>
+                            <a href="./media.html#tab3" class="hover:bg-gray-100  block px-6 py-2">技術文章</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div class="relative">
+                        <button type="button"
+                            class="w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none">關於又華</span>
+                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div
+                            class="md:absolute relative dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            <a href="./about.html" class="hover:bg-gray-100  block px-6 py-2">公司簡介</a>
+                            <a href="./history.html" class="hover:bg-gray-100  block px-6 py-2">歷史沿革</a>
+                        </div>
+                    </div>
+                    <a href="./contact.html" class="block px-3 py-2 ease-in  hover:text-teal-strong">聯絡我們</a>
+                </div>
+            </div>
+            <div
+                class="navigation-menu hidden flex-col items-center gap-5 pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                <a href="./inquiry.html" class="flex-1 px-2 py-5 font-bold text-white">
+                    <img src="../image/bag.svg" alt="" />
+                </a>
+                <button type="button" class="rounded-sm bg-teal-strong px-4 py-2 text-white hover:text-white">
+                    <a href="#">中文</a> / <a href="#">EN</a>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="banner relative z-0">
+        <div class="relative pb-24 pt-24">
+            <div class="container relative z-20 mx-auto flex justify-center  px-12 pb-8">
+                <div class="mx-auto  max-w-xl text-center">
+                    <h1 class="my-5 text-5xl font-bold leading-tight text-gray-800">聯絡我們</h1>
+                    <p class="mb-2 mt-2 text-lg leading-relaxed text-gray-600">
+                        如果您對又華產品有興趣或是有任何問題，請使用下方表格與我們聯絡。<br>在瞭解過相關訊息後，我們將會儘快給予回覆。
+                    </p>
+                </div>
+            </div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-gray-50/75 to-gray-50/100"></div>
+            <img src="../image/contact.png" loading="lazy" alt=""
+                class="absolute inset-0 z-0 h-full w-full object-cover" />
+        </div>
+    </section>
+    <section class="content">
+        <form action="#" method="POST" class="mx-auto mb-20 max-w-xl bg-white p-10 rounded-md border border-gray-200">
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div>
+                    <label for="name" class="block text-sm font-semibold leading-6 text-black">聯絡人姓名<span
+                            class="text-red-500">&#42;</span></label>
+                    <div class="mt-2.5">
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm  border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div>
+                    <label for="last-name" class="block text-sm font-semibold leading-6 text-black">國家</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm  border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div>
+                    <label for="company" class="block text-sm font-semibold leading-6 text-black">公司名稱<span
+                            class="text-red-500">&#42;</span></label>
+                    <div class="mt-2.5">
+                        <input type="text" name="company" id="company" autocomplete="organization"
+                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm  border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-semibold leading-6 text-black">連絡電話</label>
+                    <div class="mt-2.5">
+                        <input type="email" name="email" id="email" autocomplete="email"
+                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm  border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div>
+                    <label for="company" class="block text-sm font-semibold leading-6 text-black">電子信箱<span
+                            class="text-red-500">&#42;</span></label>
+                    <div class="mt-2.5">
+                        <input type="text" name="company" id="company" autocomplete="organization"
+                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm  border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-semibold leading-6 text-black">地址</label>
+                    <div class="mt-2.5">
+                        <input type="email" name="email" id="email" autocomplete="email"
+                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm  border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block text-sm font-semibold leading-6 text-green-600">訊息<span
+                            class="text-red-500">&#42;</span></label>
+                    <div class="mt-2.5">
+                        <textarea name="message" id="message" rows="4"
+                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm  border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <label for="company" class="block text-sm font-semibold leading-6 text-black">驗證碼<span
+                            class="text-red-500">&#42;</span></label>
+                    <div class="mt-2.5 relative">
+                        <input type="text" name="company" id="company" autocomplete="organization"
+                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm  border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6 relative z-10">
+                        <div class="items-center justify-end flex  gap-2 h-full w-full absolute right-0 top-0 ">
+                            <span class="chktext" id="chktext"><img src="../image/load_show_chknum.jpg"></span>
+                            <button type="button" class="reBtn" onclick="load_showchknum();"></button>
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <div class="mt-8">
+                        <button type="submit"
+                            class="block w-full rounded-md bg-teal px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">確認送出</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <!--  地图 -->
+        <h2 class="text-center text-teal font-bold text-3xl mb-10">聯絡資訊</h2>
+        <div id="map"></div>
+        <div class="container mx-auto lg:px-20">
+            <div class="flex flex-wrap md:flex-nowrap border-t border-gray-200 my-12 ">
+                <div class="w-full md:w-1/2 py-3 pl-4 pr-6 border-b border-l border-r border-gray-200">
+                    <h5 class="relative w-full text-lg leading-tight px-3 pl-0 pr-10 text-black font-medium ">清水廠</h5>
+                    <ul class="w-full pt-3">
+                        <li class="flex text-base text-gray-700 p-1 leading-normal ">
+                            <span class="text-teal w-[2.5em] mr-[1em]">地址</span>
+                            <span class="w-[calc(100% - 3.4em)]">
+                                <a class="text" target="_blank"
+                                    href="https://maps.app.goo.gl/gQADpfrqxExgSrDw5">台中市436036清水區高美路309號</a>
+                            </span>
+                        </li>
+                        <li class="flex text-base text-gray-700 p-1 leading-normal ">
+                            <span class="text-teal w-[2.5em] mr-[1em]">電話</span>
+                            <span class="w-[calc(100% - 3.4em)]">
+                                <a class="text" target="_blank" href="tel:886-4-26398679">886-4-26398679</a>
+                            </span>
+                        </li>
+                        <li class="flex text-base text-gray-700 p-1 leading-normal ">
+                            <span class="text-teal w-[2.5em] mr-[1em]">傳真</span>
+                            <span class="w-[calc(100% - 3.4em)]">
+                                <a class="text" target="_blank" href="fax:886-4-26398268">886-4-26398268</a>
+                            </span>
+                        </li>
+                        <li class="flex text-base text-gray-700 p-1 leading-normal ">
+                            <span class="text-teal w-[2.5em] mr-[1em]">信箱</span>
+                            <span class="w-[calc(100% - 3.4em)]">
+                                <a class="text" target="_blank" href="email:gmarsoil@gmail.com">gmarsoil@gmail.com</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 py-3 pl-4 pr-6 border-b border-l border-r border-gray-200">
+                    <h5 class="relative w-full text-lg leading-tight px-3 pl-0 pr-10 text-black font-medium ">龍井廠</h5>
+                    <ul class="w-full pt-3">
+                        <li class="flex text-base text-gray-700 p-1 leading-normal ">
+                            <span class="text-teal w-[2.5em] mr-[1em]">地址</span>
+                            <span class="w-[calc(100% - 3.4em)]">
+                                <a class="text" target="_blank"
+                                    href="https://maps.app.goo.gl/YYKDBeiJUkp95TM89">台中市434011龍井區蚵寮路326號</a>
+                            </span>
+                        </li>
+                        <li class="flex text-base text-gray-700 p-1 leading-normal ">
+                            <span class="text-teal w-[2.5em] mr-[1em]">電話</span>
+                            <span class="w-[calc(100% - 3.4em)]">
+                                <a class="text" target="_blank" href="tel:886-4-26398679">886-4-26398679</a>
+                            </span>
+                        </li>
+                        <li class="flex text-base text-gray-700 p-1 leading-normal ">
+                            <span class="text-teal w-[2.5em] mr-[1em]">傳真</span>
+                            <span class="w-[calc(100% - 3.4em)]">
+                                <a class="text" target="_blank" href="fax:
+                                886-4-26398268">
+                                    886-4-26398268</a>
+                            </span>
+                        </li>
+                        <li class="flex text-base text-gray-700 p-1 leading-normal ">
+                            <span class="text-teal w-[2.5em] mr-[1em]">信箱</span>
+                            <span class="w-[calc(100% - 3.4em)]">
+                                <a class="text" target="_blank" href="email:
+                                gmarsoil@gmail.com">
+                                    gmarsoil@gmail.com</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="relative border border-gray-200 pb-0 pt-16">
+        <div class="container mx-auto relative">
+            <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
+                <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
+              after:w-[113%] after:hover:top-0 after:transition-all ">
+                    <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+                </div>
+            </a>
+            <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
+                <ul class="m-0 grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-[30px] p-0">
+                    <li class="text-base  leading-relaxed">
+                        <a href="./products.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                產品介紹
+                            </div>
+                        </a>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./products-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">塑膠PVC添加劑</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./products-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em]">油漆塗料加工油</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <a href="./application.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                產品應用
+                            </div>
+                        </a>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./application-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">塑橡膠產業</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./application-1.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">車用產業</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed ">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            品質檢驗
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab1"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">認證</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab2"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">檢測報告</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./qc.html#tab3"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">得獎獎項</a>
+                            </li>
+                        </ul>
+                        <a href="./media.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                媒體專區
+                            </div>
+                        </a>
+                        <ul class="mb-[10px] mt-0 list-none pl-0">
+                            <li class="text-[16px] leading-7">
+                                <a href="./media.html#tab2"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">新聞消息</a>
+                            </li>
+                            <li class="text-[16px] leading-7">
+                                <a href="./media.html#tab3"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">技術文章</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            關於又華
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7">
+                                <a href="./about.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">公司簡介</a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="./history.html"
+                                    class="relative mx-auto block py-[0.78em] pr-[1.7em] text-left align-top text-[0.85em] leading-[1.3em] ">歷史沿革</a>
+                            </li>
+                        </ul>
+                        <a href="./esg.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                                ESG永續
+                            </div>
+                        </a>
+                        <a href="./contact.html">
+                            <div class="mb-4 mt-6 text-xl font-bold leading-5 text-teal-strong">
+                                聯絡我們
+                            </div>
+                        </a>
+                    </li>
+                    <li class="text-base  leading-relaxed">
+                        <div class="mb-4 mt-6 text-xl font-bold leading-5 text-gray-800">
+                            Connect with Us
+                        </div>
+                        <ul class="mb-3 mt-0 pl-0 text-gray-700">
+                            <li class="text-[16px]  leading-7 ">
+                                <a href="#" target="_blank"
+                                    class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                                    <img src="../image/footer-fb.svg" alt="" class="mr-3 h-8 w-8" />
+                                    <div>Facebook</div>
+                                </a>
+                            </li>
+                            <li class="text-[16px]  leading-7">
+                                <a href="#" target="_blank"
+                                    class="duration-350 flex max-w-full items-center bg-transparent py-[0.5em] pr-[1.7em] text-[0.85em] leading-[1.3em]  no-underline transition-opacity">
+                                    <img src="../image/footer-line.svg" alt="" class="mr-3 h-8 w-8" />
+                                    <div>LINE</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-teal-strong py-8 text-white">
+            <div class="container relative z-20 mx-auto ">
+                <div class="row pl-14 pr-14 flex md:justify-between md:flex-nowrap flex-wrap">
+                    <div>
+                        <div>
+                            Designed by Lets
+                            <span><a href="https://www.letsmedia.tw/" target="_blank">Lets Media</a>
+                                <a href="https://www.ezb2b.com/" target="_blank">EZB2B</a></span>
+                        </div>
+                    </div>
+                    <div>
+                        Copyright © 2024 又華股份有限公司 版權所有.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // 初始化地圖，設置中心點和縮放級別
+        var map = L.map('map', {
+            scrollWheelZoom: false // 禁用滑鼠滾輪縮放
+        }).setView([24.2573, 120.6189], 11);
+
+        // 加入 OSM 瓦片圖層
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // 自訂意圖標\
+        var svgIcon = L.divIcon({
+            className: 'custom-icon',
+            html: '<svg fill="#ff0000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 395.71 395.71" xml:space="preserve" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"></path> </g> </g></svg>',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16]
+        });
+        // 添加一個標記
+        var locations = [
+            { lat: 24.2870352, lng: 120.5717077, name: '清水廠' },
+            { lat: 24.2115965, lng: 120.4944348, name: '龍井廠' },
+        ];
+
+        // 遍歷每個位置，並添加標記
+        locations.forEach(function (location) {
+            L.marker([location.lat, location.lng], { icon: svgIcon })
+                .addTo(map)
+                .bindPopup('<b>' + location.name + '</b>');
+        });
+    </script>
+    <script src="../js/common.js"></script>
+</body>
+
+</html>

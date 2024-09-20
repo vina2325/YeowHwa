@@ -37,10 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const mobileMenuButton = document.querySelector(".mobile-menu-button");
-  const mobileMenu = document.querySelector(".navigation-menu");
+  const mobileMenus = document.querySelectorAll(".navigation-menu");
 
   mobileMenuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+    mobileMenus.forEach((menu) => {
+      menu.classList.toggle("hidden");
+    });
   });
 });
 // 輪播

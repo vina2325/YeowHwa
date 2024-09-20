@@ -61,16 +61,17 @@
 </head>
 
 <body id="inquiry" class="bg-white">
-    <nav class="text-gray-700 border-b border-b-gray-100 drop-shadow relative z-20">
-        <div class="container mx-auto items-center justify-around px-4 md:flex">
-            <div class="items-center justify-between gap-6 md:flex">
+    <nav
+        class="sticky top-0 flex w-full flex-wrap items-center justify-between bg-white text-gray-700 border-b border-b-gray-100 drop-shadow z-50">
+        <div class="container mx-auto items-center justify-around px-4 lg:flex">
+            <div class="items-center justify-between gap-6 lg:flex">
                 <!-- Logo -->
-                <div class="flex w-full items-center justify-between md:w-auto">
-                    <a href="./index.html" class="flex-1 px-2 py-5 font-bold text-white">
+                <div class="flex w-full items-center justify-between lg:w-auto">
+                    <a href="./index.html" class="flex-1 px-2 py-5 scroll-py-0 font-bold text-white">
                         <img src="../image/logo.svg" alt="又華LOGO" />
                     </a>
                     <!-- mobile menu icon -->
-                    <div class="flex items-center md:hidden">
+                    <div class="flex items-center lg:hidden">
                         <button type="button" class="mobile-menu-button">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="h-6 w-6">
@@ -81,7 +82,7 @@
                     </div>
                 </div>
                 <div
-                    class="navigation-menu hidden flex-col items-center justify-start  pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
+                    class="navigation-menu nav hidden flex-col items-center justify-start  pb-3 lg:flex lg:flex-row lg:space-x-1 lg:pb-0">
                     <!-- Dropdown menu -->
                     <div class="relative">
                         <button type="button"
@@ -89,13 +90,13 @@
                             <a href="./products.html">
                                 <span class="pointer-events-none select-none">產品介紹</span>
                             </a>
-                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                            <svg class="pointer-events-none h-3 w-3  lg:hidden" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
                         <div
-                            class="dropdown-menu md:absolute relative w-full md:w-48 hidden   bg-white text-black mt-2">
+                            class="dropdown-menu lg:absolute relative w-full lg:w-48 hidden   bg-white text-black pt-2">
                             <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
                             <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
                             <a href="./products-1.html" class="hover:bg-gray-100  block px-6 py-2">巨瑪斯車用油添加劑</a>
@@ -108,14 +109,14 @@
                             <a href="./application.html">
                                 <span class="pointer-events-none select-none">產品應用</span>
                             </a>
-                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                            <svg class="pointer-events-none h-3 w-3  lg:hidden" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
 
                         </button>
                         <div
-                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48 bg-white text-black mt-2">
+                            class="lg:absolute relative  dropdown-menu  hidden  w-full lg:w-48 bg-white text-black mt-2">
                             <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
                             <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
                             <a href="./application-1.html" class="hover:bg-gray-100  block px-6 py-2">橡塑膠產業</a>
@@ -125,15 +126,15 @@
                     <!-- Dropdown menu -->
                     <div class="relative">
                         <button type="button"
-                            class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
-                            <span class="pointer-events-none select-none">品質檢驗</span>
-                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                            class="cursor-default w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            <span class="pointer-events-none select-none ">品質檢驗</span>
+                            <svg class="pointer-events-none h-3 w-3  lg:hidden" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
                         <div
-                            class="md:absolute relative  dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            class="lg:absolute relative  dropdown-menu  hidden  w-full lg:w-48  bg-white text-black mt-2">
                             <a href="./qc.html#tab1" class="hover:bg-gray-100  block px-6 py-2">認證</a>
                             <a href="./qc.html#tab2" class="hover:bg-gray-100  block px-6 py-2">檢驗報告</a>
                             <a href="./qc.html#tab3" class="hover:bg-gray-100  block px-6 py-2">得獎項目</a>
@@ -146,14 +147,14 @@
                             <a href="./media.html">
                                 <span class="pointer-events-none select-none">媒體專區</span>
                             </a>
-                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                            <svg class="pointer-events-none h-3 w-3  lg:hidden" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
 
                         </button>
                         <div
-                            class="md:absolute relative   dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            class="lg:absolute relative   dropdown-menu  hidden  w-full lg:w-48  bg-white text-black mt-2">
                             <a href="./media.html#tab2" class="hover:bg-gray-100  block px-6 py-2">新聞消息</a>
                             <a href="./media.html#tab3" class="hover:bg-gray-100  block px-6 py-2">技術文章</a>
                         </div>
@@ -161,15 +162,15 @@
                     <!-- Dropdown menu -->
                     <div class="relative">
                         <button type="button"
-                            class="w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+                            class="cursor-default w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
                             <span class="pointer-events-none select-none">關於又華</span>
-                            <svg class="pointer-events-none h-3 w-3  md:hidden" xmlns="http://www.w3.org/2000/svg"
+                            <svg class="pointer-events-none h-3 w-3  lg:hidden" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
                         <div
-                            class="md:absolute relative dropdown-menu  hidden  w-full md:w-48  bg-white text-black mt-2">
+                            class="lg:absolute relative dropdown-menu  hidden  w-full lg:w-48  bg-white text-black mt-2">
                             <a href="./about.html" class="hover:bg-gray-100  block px-6 py-2">公司簡介</a>
                             <a href="./history.html" class="hover:bg-gray-100  block px-6 py-2">歷史沿革</a>
                         </div>
@@ -178,14 +179,20 @@
                 </div>
             </div>
             <div
-                class="navigation-menu hidden flex-col items-center gap-5 pb-3 md:flex md:flex-row md:space-x-1 md:pb-0">
-                <a href="./inquiry.html" class="flex-1 px-2 py-5 font-bold text-white">
+                class="navigation-menu justify-between px-2 hidden flex-row items-center gap-5 pb-3 flex lg:flex  lg:space-x-1 lg:pb-0">
+                <a href="./inquiry.html" class="lg:flex-1 px-2 py-5 font-bold text-white relative">
+                    <div class="dot h-2 w-2 absolute left-1/2 top-[8px]">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+                        <span class="absolute inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+                    </div>
                     <img src="../image/bag.svg" alt="" />
                 </a>
-                <button type="button" class="rounded-sm bg-teal-strong px-4 py-2 text-white hover:text-white">
-                    <a href="#">中文</a> / <a href="#">EN</a>
+                <button type="button" class="language rounded-sm bg-teal-strong px-4 py-2 text-white/80 group ">
+                    <a href="#" class="active hover:text-white">中文</a> / <a href="#" class="hover:text-white">EN</a>
                 </button>
             </div>
+
         </div>
     </nav>
     <section class="banner relative z-0">

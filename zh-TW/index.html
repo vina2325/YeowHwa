@@ -9,12 +9,6 @@
   <!-- 引入編譯後的 CSS -->
   <title>首頁</title>
   <style>
-    html,
-    body {
-      width: 100%;
-      overflow-x: hidden;
-    }
-
     body {
       box-sizing: border-box;
       font-style: normal;
@@ -53,12 +47,13 @@
 </head>
 
 <body id="home" class="bg-white">
-  <nav class="text-gray-700 border-b border-b-gray-100 drop-shadow relative z-20">
+  <nav
+    class="sticky top-0 flex w-full flex-wrap items-center justify-between bg-white text-gray-700 border-b border-b-gray-100 drop-shadow z-50">
     <div class="container mx-auto items-center justify-around px-4 lg:flex">
       <div class="items-center justify-between gap-6 lg:flex">
         <!-- Logo -->
         <div class="flex w-full items-center justify-between lg:w-auto">
-          <a href="./index.html" class="flex-1 px-2 py-5 font-bold text-white">
+          <a href="./index.html" class="flex-1 px-2 py-5 scroll-py-0 font-bold text-white">
             <img src="../image/logo.svg" alt="又華LOGO" />
           </a>
           <!-- mobile menu icon -->
@@ -85,7 +80,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
             </button>
-            <div class="dropdown-menu lg:absolute relative w-full lg:w-48 hidden   bg-white text-black mt-2">
+            <div class="dropdown-menu lg:absolute relative w-full lg:w-48 hidden   bg-white text-black pt-2">
               <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
               <a href="./products-1.html" class="hover:bg-gray-100 block px-6 py-2">巨瑪斯車用油添加劑</a>
               <a href="./products-1.html" class="hover:bg-gray-100  block px-6 py-2">巨瑪斯車用油添加劑</a>
@@ -114,8 +109,8 @@
           <!-- Dropdown menu -->
           <div class="relative">
             <button type="button"
-              class="w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
-              <span class="pointer-events-none select-none">品質檢驗</span>
+              class="cursor-default w-full justify-between dropdown-toggle ease-in duration-200 hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+              <span class="pointer-events-none select-none ">品質檢驗</span>
               <svg class="pointer-events-none h-3 w-3  lg:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -148,7 +143,7 @@
           <!-- Dropdown menu -->
           <div class="relative">
             <button type="button"
-              class="w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
+              class="cursor-default w-full  justify-between dropdown-toggle ease-in  hover:text-teal-strong flex items-center gap-2 rounded px-3 py-2">
               <span class="pointer-events-none select-none">關於又華</span>
               <svg class="pointer-events-none h-3 w-3  lg:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -808,6 +803,24 @@
   </footer>
   <script src="../js/swiper.js"></script>
   <script src="../js/common.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      speed: 600,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
 
 </html>

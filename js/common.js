@@ -45,21 +45,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-// 輪播
-
-var swiper = new Swiper(".mySwiper", {
-  speed: 600,
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});

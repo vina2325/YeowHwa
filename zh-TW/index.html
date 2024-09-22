@@ -941,6 +941,8 @@
             slides.forEach(function (slide) {
               slide.classList.remove('shrink');
             });
+            nextButton.style.display = 'flex'; // 確保按鈕顯示
+            prevButton.style.display = 'flex';
           }
         } else {
           if (swiper) {

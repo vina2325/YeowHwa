@@ -28,10 +28,51 @@
       height: 80px;
     }
 
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
+    .mySwiper .swiper-button-next:after,
+    .mySwiper .swiper-button-prev:after {
       display: none;
     }
+
+    .mySwiper2 .swiper-button-next:after,
+    .mySwiper2 .swiper-button-prev:after {
+      color: #ffffff;
+    }
+
+    .mySwiper2 .swiper-button-next,
+    .mySwiper2 .swiper-button-prev {
+      height: 100%;
+      top: 0;
+      margin-top: 0;
+      padding: 2rem;
+      filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.548));
+    }
+
+    .mySwiper2 .swiper-button-prev {
+      opacity: 0.9;
+      transition: all ease-in-out;
+      left: 0;
+    }
+
+    .mySwiper2 .swiper-button-prev:hover {
+      opacity: 1;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent);
+    }
+
+    .mySwiper2 .swiper-button-next {
+      opacity: 0.9;
+      background: transparent;
+      transition: all 0.4s ease-in-out;
+      ;
+      right: 0;
+
+    }
+
+    .mySwiper2 .swiper-button-next:hover {
+      opacity: 1;
+      background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5), transparent);
+    }
+
+
 
     .img-area::after {
       display: block;
@@ -182,7 +223,7 @@
       <div class="swiper mySwiper ">
         <div class="swiper-wrapper">
           <div class="swiper-slide flex flex-col md:flex-row">
-            <div class="w-full md:w-1/2 lg:pt-32 lg:pl-24 px-8 py-12">
+            <div class="m-auto lg:pt-0 px-6 py-12">
               <h1
                 class="mb-2 lg:text-6xl text-5xl font-bold leading-tight tracking-wide overflow-hidden text-ellipsis whitespace-nowrap ">
                 因應環保趨勢<br />創造無限商機
@@ -208,7 +249,7 @@
             </div>
           </div>
           <div class="swiper-slide flex flex-col sm:flex-row">
-            <div class="w-full md:w-1/2 lg:pt-32 lg:pl-24 px-6 py-12">
+            <div class="m-auto lg:pt-0 px-6 py-12">
               <h1
                 class="mb-2 lg:text-6xl text-5xl font-bold leading-tight tracking-wide overflow-hidden text-ellipsis whitespace-nowrap">
                 2 因應環保趨勢<br />創造無限商機
@@ -376,105 +417,149 @@
       <h2 class="mb-8 mt-5 text-4xl font-bold leading-[1.3em] tracking-wide">
         產品應用
       </h2>
-      <div class="md:flex flex-grow flex-wrap md:flex-nowrap gap-y-5">
-        <div class="block">
-          <a class="relative block text-white" href="./application.html">
-            <article>
-              <div class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
-                <img class="h-full max-w-full object-cover" src="../image/home-s5-1.png" />
-              </div>
-              <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-brown pl-8 pr-7 pt-10">
-                <p class="mb-4 mt-0 text-xl font-bold">橡膠產業</p>
-                <div class="max-w-[9rem] overflow-hidden text-sm font-medium">
-                  <p class="line-clamp-3 max-w-36 overflow-hidden text-sm font-medium" style="
+      <a href="./application.html"
+        class="duration-350 flex items-center mb-5 text-teal transition-opacity hover:opacity-70 relative justify-end">
+        <p class="font-semibold">查看更多</p>
+        <svg class="ml-2 h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+      <div class="swiper mySwiper2">
+        <div class="md:flex flex-grow flex-wrap md:flex-nowrap gap-y-5 swiper-wrapper">
+          <div class="swiper-slide shrink">
+            <a class="relative block text-white" href="./application-1.html">
+              <article>
+                <div class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
+                  <img class="h-full max-w-full object-cover" src="../image/home-s5-1.png" />
+                </div>
+                <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-brown pl-8 pr-7 pt-10">
+                  <p class="mb-4 mt-0 text-xl font-bold">橡膠產業</p>
+                  <div class="max-w-[9rem] overflow-hidden text-sm font-medium">
+                    <p class="line-clamp-3 max-w-36 overflow-hidden text-sm font-medium" style="
+                              display: -webkit-box;
+                              -webkit-box-orient: vertical;
+                              text-overflow: ellipsis;
+                            ">
+                      · 環保可塑劑
+                      <br />
+                      · 膠化促進劑
+                      <br />
+                      · 環氧脂肪酸甲酯
+                      <br />
+                      · 環氧脂肪酸甲酯
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
+                <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+                <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+                <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+                <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+              </svg>
+            </a>
+          </div>
+          <div class="swiper-slide shrink">
+            <a class="relative block text-white" href="./application-1.html">
+              <article>
+                <div class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
+                  <img class="h-full max-w-full object-cover" src="../image/home-s5-2.png" />
+                </div>
+                <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-pink pl-8 pr-7 pt-10">
+                  <p class="mb-4 mt-0 text-xl font-bold">PU塗料業</p>
+                  <div class="max-w-[9rem] overflow-hidden text-sm font-medium">
+                    <p class="line-clamp-3 max-w-36 overflow-hidden text-sm font-medium" style="
+                              display: -webkit-box;
+                              -webkit-box-orient: vertical;
+                              text-overflow: ellipsis;
+                            ">
+                      · 蓖麻基加工油
+                      <br />
+                      · 水性塗料添加劑
+                      <br />
+                      · 環保油墨添加劑
+                      <br />
+                      · 環保油墨添加劑
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
+                <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+                <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+                <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+                <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+              </svg>
+            </a>
+          </div>
+          <div class="swiper-slide shrink">
+            <a class="relative block  text-white" href="./application-1.html">
+              <article>
+                <div s class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
+                  <img class="h-full max-w-full object-cover" src="../image/home-s5-3.png" />
+                </div>
+                <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-yellow_green pl-8 pr-7 pt-10">
+                  <p class="mb-4 mt-0 text-xl font-bold">車用產業</p>
+                  <p class="line-clamp-3 max-w-40 overflow-hidden text-sm font-medium" style="
                             display: -webkit-box;
                             -webkit-box-orient: vertical;
                             text-overflow: ellipsis;
                           ">
-                    · 環保可塑劑
+                    · 減磨劑
                     <br />
-                    · 膠化促進劑
+                    · 單酯、雙酯機油添加劑
                     <br />
-                    · 環氧脂肪酸甲酯
+                    · 汽油添加劑
                     <br />
-                    · 環氧脂肪酸甲酯
+                    · 汽油添加劑
                   </p>
                 </div>
-              </div>
-            </article>
-            <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
-              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
-              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
-              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
-              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
-            </svg>
-          </a>
-        </div>
-        <div class="block">
-          <a class="relative block text-white" href="./application.html">
-            <article>
-              <div class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
-                <img class="h-full max-w-full object-cover" src="../image/home-s5-2.png" />
-              </div>
-              <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-pink pl-8 pr-7 pt-10">
-                <p class="mb-4 mt-0 text-xl font-bold">PU塗料業</p>
-                <div class="max-w-[9rem] overflow-hidden text-sm font-medium">
-                  <p class="line-clamp-3 max-w-36 overflow-hidden text-sm font-medium" style="
+              </article>
+              <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
+                <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+                <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+                <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+                <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+              </svg>
+            </a>
+          </div>
+          <div class="swiper-slide shrink">
+            <a class="relative block  text-white" href="./application-1.html">
+              <article>
+                <div s class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
+                  <img class="h-full max-w-full object-cover" src="../image/home-s5-3.png" />
+                </div>
+                <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-yellow_green pl-8 pr-7 pt-10">
+                  <p class="mb-4 mt-0 text-xl font-bold">車用產業</p>
+                  <p class="line-clamp-3 max-w-40 overflow-hidden text-sm font-medium" style="
                             display: -webkit-box;
                             -webkit-box-orient: vertical;
                             text-overflow: ellipsis;
                           ">
-                    · 蓖麻基加工油
+                    · 減磨劑
                     <br />
-                    · 水性塗料添加劑
+                    · 單酯、雙酯機油添加劑
                     <br />
-                    · 環保油墨添加劑
+                    · 汽油添加劑
                     <br />
-                    · 環保油墨添加劑
+                    · 汽油添加劑
                   </p>
                 </div>
-              </div>
-            </article>
-            <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
-              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
-              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
-              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
-              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
-            </svg>
-          </a>
+              </article>
+              <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
+                <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
+                <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
+                <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
+                <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="block">
-          <a class="relative block  text-white" href="./application.html">
-            <article>
-              <div s class="lg:aspect-[549/587] aspect-[549/587] md:aspect-[400/587]">
-                <img class="h-full max-w-full object-cover" src="../image/home-s5-3.png" />
-              </div>
-              <div class="absolute bottom-0 left-10 right-0 z-10 min-h-48 bg-earth-yellow_green pl-8 pr-7 pt-10">
-                <p class="mb-4 mt-0 text-xl font-bold">車用產業</p>
-                <p class="line-clamp-3 max-w-40 overflow-hidden text-sm font-medium" style="
-                          display: -webkit-box;
-                          -webkit-box-orient: vertical;
-                          text-overflow: ellipsis;
-                        ">
-                  · 減磨劑
-                  <br />
-                  · 單酯、雙酯機油添加劑
-                  <br />
-                  · 汽油添加劑
-                  <br />
-                  · 汽油添加劑
-                </p>
-              </div>
-            </article>
-            <svg class="pointer-events-none absolute bottom-6 right-6 z-10 h-7 w-7 fill-white" viewBox="0 0 18 18">
-              <rect width="23.9" height="1" transform="translate(0 17.173) rotate(-45)"></rect>
-              <rect width="12.805" height="0.915" transform="translate(18 0) rotate(90)"></rect>
-              <rect width="12.805" height="0.915" transform="translate(4.964 0)"></rect>
-              <rect width="23.9" height="1" transform="translate(-18 35) rotate(-45)"></rect>
-            </svg>
-          </a>
-        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
+
     </div>
   </section>
   <section class="s6">
@@ -482,9 +567,17 @@
       <h2 class="mb-8 mt-5 text-4xl font-bold leading-[1.3em] tracking-wide">
         媒體專區
       </h2>
+      <a href="./media.html"
+        class="duration-350 flex items-center mb-5 text-teal transition-opacity hover:opacity-70 relative justify-end">
+        <p class="font-semibold">查看更多</p>
+        <svg class="ml-2 h-[14px] w-auto" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
       <div class="flex flex-wrap md:flex-nowrap gap-y-10">
         <div class="block pl-7 pr-7">
-          <a class="md:max-w[500px] relative block bg-transparent" href="./media.html">
+          <a class="md:max-w[500px] relative block bg-transparent" href="./media-1.html">
             <div class="flex">
               <div class="mr-4 flex self-end" style="writing-mode: vertical-rl">
                 <span class="mb-3 text-4xl font-bold">04</span>
@@ -513,7 +606,7 @@
           </a>
         </div>
         <div class="block pl-7 pr-7">
-          <a class="md:max-w[500px] relative block bg-transparent" href="./media.html">
+          <a class="md:max-w[500px] relative block bg-transparent" href="./media-1.html">
             <div class="flex">
               <div class="mr-4 flex self-end" style="writing-mode: vertical-rl">
                 <span class="mb-3 text-4xl font-bold">04</span>
@@ -542,7 +635,7 @@
           </a>
         </div>
         <div class="block pl-7 pr-7">
-          <a class="md:max-w[500px] relative block bg-transparent" href="./media.html">
+          <a class="md:max-w[500px] relative block bg-transparent" href="./media-1.html">
             <div class="flex">
               <div class="mr-4 flex self-end" style="writing-mode: vertical-rl">
                 <span class="mb-3 text-4xl font-bold">04</span>
@@ -825,6 +918,47 @@
         prevEl: ".swiper-button-prev",
       },
     });
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiperWrapper = document.querySelector('.mySwiper2 .swiper-wrapper');
+      var slides = swiperWrapper.querySelectorAll('.swiper-slide');
+      var nextButton = document.querySelector('.mySwiper2 .swiper-button-next');
+      var prevButton = document.querySelector('.mySwiper2 .swiper-button-prev');
+      var swiper; // 用來存儲 Swiper 實例
+
+      function initializeSwiper() {
+        // 檢查是否有超過 3 個 slide 且視窗寬度大於 767px
+        if (slides.length > 3 && window.innerWidth > 767) {
+          if (!swiper) { // 檢查是否已經初始化過 Swiper
+            swiper = new Swiper('.mySwiper2', {
+              slidesPerView: 3,
+              spaceBetween: 10,
+              loop: true,
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+            });
+            slides.forEach(function (slide) {
+              slide.classList.remove('shrink');
+            });
+          }
+        } else {
+          if (swiper) {
+            swiper.destroy(); // 銷毀 Swiper 實例
+            swiper = null; // 清空 Swiper 變數
+          }
+          nextButton.style.display = 'none';
+          prevButton.style.display = 'none';
+        }
+      }
+
+      // 初始化 Swiper
+      initializeSwiper();
+
+      // 當視窗大小改變時重新檢查
+      window.addEventListener('resize', initializeSwiper);
+    });
+
   </script>
 </body>
 

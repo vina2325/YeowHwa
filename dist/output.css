@@ -1209,6 +1209,10 @@ video {
   width: 100%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .max-w-36 {
   max-width: 9rem;
 }
@@ -1507,6 +1511,10 @@ video {
 
 .self-end {
   align-self: flex-end;
+}
+
+.justify-self-end {
+  justify-self: end;
 }
 
 .overflow-hidden {

@@ -81,6 +81,10 @@
                 display: none;
             }
 
+            .mySwiper2 .swiper-slide:nth-child(n+4),
+            .mySwiper3 .swiper-slide:nth-child(n+4) {
+                display: none;
+            }
 
         }
     </style>
@@ -228,7 +232,7 @@
         <nav class="absolute inset-0 w-full h-12 z-30" aria-label="Breadcrumb" data-aos="fade-down"
             data-aos-duration="1000">
             <div class="flex container mx-auto items-center justify-start xl:px-40 px-9 pt-5">
-                <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse w-full overflow-hidden">
                     <li class="inline-flex items-center">
                         <a href="./index.html"
                             class="inline-flex items-center text-sm font-medium text-white  hover:text-teal-strong dark:text-gray-400 dark:hover:text-white">
@@ -247,7 +251,7 @@
                                     stroke-width="2" d="m1 9 4-4-4-4" />
                             </svg>
                             <a href="./products.html"
-                                class="ms-1 text-sm font-medium text-white  hover:text-teal-strong md:ms-2 dark:text-gray-400 dark:hover:text-white">產品介紹</a>
+                                class="truncate block w-full ms-1 text-sm font-medium text-white  hover:text-teal-strong md:ms-2 dark:text-gray-400 dark:hover:text-white">產品介紹</a>
                         </div>
                     </li>
                     <li>
@@ -258,7 +262,7 @@
                                     stroke-width="2" d="m1 9 4-4-4-4" />
                             </svg>
                             <a href="./products-1.html"
-                                class="ms-1 text-sm font-medium text-white  hover:text-teal-strong md:ms-2 dark:text-gray-400 dark:hover:text-white">巨瑪斯車用油添加劑</a>
+                                class="truncate block w-[80px] sm:w-full  ms-1 text-sm font-medium text-white  hover:text-teal-strong md:ms-2 dark:text-gray-400 dark:hover:text-white">巨瑪斯車用油添加劑</a>
                         </div>
                     </li>
                     <li aria-current="page">
@@ -269,7 +273,7 @@
                                     stroke-width="2" d="m1 9 4-4-4-4" />
                             </svg>
                             <span
-                                class="ms-1 text-sm font-medium text-white/80 md:ms-2 dark:text-gray-400">機油減磨添加劑</span>
+                                class="truncate block w-[80px] sm:w-full ms-1 text-sm font-medium text-white/80 md:ms-2 dark:text-gray-400">機油減磨添加劑</span>
                         </div>
                     </li>
                 </ol>
@@ -289,17 +293,17 @@
     </section>
     <section class="content ">
         <div class="container relative  mx-auto lg:py-28 lg:px-32 p-10">
-            <div class="w-full grid sm:grid-cols-7  grid-cols-1  gap-y-10 lg:gap-x-36 gap-x-10" data-aos="fade-up"
+            <div class="w-full grid md:grid-cols-7  grid-cols-1  gap-y-10 lg:gap-x-36 gap-x-10" data-aos="fade-up"
                 data-aos-duration="3000" data-aos-delay="500">
-                <div class="place-self-center sm:col-span-3 swiper mySwiper1 border border-gray-200">
-                    <div class="swiper-wrapper ">
-                        <div class="swiper-slide  relative">
-                            <img class="w-full h-full object-contain" src="../image/products2-1.png" alt="">
+                <div class="place-self-center sm:col-span-3 swiper mySwiper1 border border-gray-200 px-5 md:px-0">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide  relative md:p-0 p-5">
+                            <img class="w-full h-full object-contain " src="../image/products2-1.png" alt="">
                         </div>
-                        <div class="swiper-slide"><img class="w-full h-full object-contain"
+                        <div class="swiper-slide md:p-0 p-5"><img class="w-full h-full object-contain"
                                 src="../image/products2-1.png" alt="">
                         </div>
-                        <div class="swiper-slide"><img class="w-full h-full object-contain"
+                        <div class="swiper-slide md:p-0 p-5"><img class="w-full h-full object-contain"
                                 src="../image/products2-1.png" alt="">
                         </div>
                     </div>
@@ -324,7 +328,9 @@
                         </div>
                         <div class="-skew-x-12 inline-block text-gray-800 border border-teal px-3 py-1">
                             <button type="button" class="skew-x-12">
-                                <span>加入購物車</span>
+                                <a href="#">
+                                    <span>加入購物車</span>
+                                </a>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="size-6 inline-block">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -895,7 +901,7 @@
                 // 當寬度小於等於 640px 時
                 640: {
                     direction: 'vertical', // 垂直呈現
-                    slidesPerView: 'auto', // 顯示所有 slides
+                    slidesPerView: 3,
                     allowTouchMove: false, // 禁止滾動
                 },
                 641: {

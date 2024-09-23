@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon.ico">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet" />
     <title>媒體專區</title>
     <style>
@@ -151,7 +152,8 @@
     </nav>
     <section class="banner relative z-10">
         <!--breadcrumb  -->
-        <nav class="absolute inset-0 w-full h-12 z-30" aria-label="Breadcrumb">
+        <nav class="absolute inset-0 w-full h-12 z-30" aria-label="Breadcrumb" data-aos="fade-down"
+            data-aos-duration="1000">
             <div class="flex container mx-auto items-center justify-start xl:px-40 px-9 pt-5">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                     <li class="inline-flex items-center">
@@ -191,7 +193,8 @@
         <!--breadcrumb end -->
         <div class="relative pb-24 pt-24">
             <div class="container relative z-20 mx-auto flex justify-center  px-12 pb-8">
-                <div class="mx-auto  max-w-xl text-center">
+                <div class="mx-auto  max-w-xl text-center" data-aos="fade-down" data-aos-duration="3000"
+                    data-aos-delay="300">
                     <h1 class="my-5 text-5xl font-bold leading-tight text-gray-800">媒體專區</h1>
                     <p class="mb-2 mt-2 text-lg leading-relaxed text-gray-600">
                         關於又華股份公司的新聞消息和技術文章
@@ -203,7 +206,7 @@
                 class="absolute inset-0 z-0 h-full w-full object-cover" />
         </div>
     </section>
-    <section class="content">
+    <section class="content" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500">
         <div class="containe mx-autor">
             <div x-data="{ openTab: 1 }"
                 x-init="openTab = window.location.hash ? parseInt(window.location.hash.replace('#tab', '')) : 1; 
@@ -498,7 +501,8 @@
             <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
                 <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
               after:w-[113%] after:hover:top-0 after:transition-all ">
-                    <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+                    <img src="../image/gototop.svg" alt=""
+                        class="transition-opacity hover:opacity-70  inline-block h-10 w-10 align-middle opacity-80" />
                 </div>
             </a>
             <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
@@ -638,7 +642,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/common.js"></script>
 </body>
 

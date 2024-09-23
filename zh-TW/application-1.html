@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon.ico">
     <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet" />
     <title>橡塑膠產業</title>
     <style>
@@ -231,7 +232,8 @@
     </nav>
     <section class="banner relative z-0">
         <!--breadcrumb  -->
-        <nav class="absolute inset-0 w-full h-12 z-30" aria-label="Breadcrumb">
+        <nav class="absolute inset-0 w-full h-12 z-30" aria-label="Breadcrumb" data-aos="fade-down"
+            data-aos-duration="1000">
             <div class="flex container mx-auto items-center justify-start xl:px-40 px-9 pt-5">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                     <li class="inline-flex items-center">
@@ -271,7 +273,8 @@
         <!--breadcrumb end -->
         <div class="relative pb-24 pt-24">
             <div class="container relative z-20 mx-auto flex justify-center  px-12 pb-8">
-                <div class="mx-auto  max-w-xl text-center">
+                <div class="mx-auto  max-w-xl text-center" data-aos="fade-down" data-aos-duration="3000"
+                    data-aos-delay="300">
                     <h1 class="my-5 text-5xl font-bold leading-tight text-gray-800">橡塑膠產業</h1>
                     <p class="mb-2 mt-2 text-lg leading-relaxed text-gray-600">
                         又華股份有限公司生產的植物性油品在橡塑膠產業中的應用具有多重價值和功能，以下為幾個主要的應用方式：
@@ -283,7 +286,7 @@
                 class="absolute inset-0 z-0 h-full w-full object-cover" />
         </div>
     </section>
-    <section class="content relative z-10">
+    <section class="content relative z-10" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500">
         <div class="mx-auto max-w-screen-lg px-10 mt-[-60px]">
             <div class="flex flex-col lg:flex-row lg:space-x-12">
                 <div class="lg:order-2 relative  industries  m-auto mt-12 w-full max-w-screen-sm lg:w-1/4">
@@ -530,7 +533,8 @@
             <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
                 <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
               after:w-[113%] after:hover:top-0 after:transition-all ">
-                    <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+                    <img src="../image/gototop.svg" alt=""
+                        class="inline-block h-10 w-10 align-middle opacity-80 transition-opacity hover:opacity-70 " />
                 </div>
             </a>
             <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
@@ -671,6 +675,7 @@
         </div>
     </footer>
     <script src="../js/swiper.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/common.js"></script>
     <!-- Initialize Swiper -->
     <script>

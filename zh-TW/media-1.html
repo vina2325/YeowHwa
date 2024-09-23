@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon.ico">
     <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet" />
     <title>新聞消息</title>
     <style>
@@ -151,7 +152,8 @@
     </nav>
     <section class="content relative">
         <!--breadcrumb  -->
-        <nav class="absolute inset-0 -top-8 w-full h-12 z-30" aria-label="Breadcrumb">
+        <nav class="absolute inset-0 -top-8 w-full h-12 z-30" aria-label="Breadcrumb" data-aos="fade-down"
+            data-aos-duration="1000">
             <div class="flex container mx-auto items-center justify-start xl:px-40 px-9 ">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse w-full">
                     <li class="inline-flex items-center">
@@ -207,7 +209,8 @@
             <main class="mt-10">
 
                 <div class="mb-4 md:mb-0 w-full mx-auto relative">
-                    <div class="px-4 lg:px-0 text-center">
+                    <div class="px-4 lg:px-0 text-center" data-aos="fade-in" data-aos-duration="4000"
+                        data-aos-delay="500">
                         <a href="#" class="py-2 text-teal inline-flex items-center justify-center mb-2">
                             新聞消息
                         </a>
@@ -217,10 +220,12 @@
                         <p class="time text-sm mb-10">2021 年 12 月 15 日</p>
                     </div>
 
-                    <img src="../image/news-1.jpg" class="w-full object-cover lg:rounded" style="height: 28em;" />
+                    <img src="../image/news-1.jpg" class="w-full object-cover lg:rounded" style="height: 28em;"
+                        data-aos="fade-in" data-aos-duration="3000" data-aos-delay="500" />
                 </div>
 
-                <div class="flex flex-col lg:flex-row lg:space-x-12">
+                <div class="flex flex-col lg:flex-row lg:space-x-12" data-aos="fade-in" data-aos-duration="3000"
+                    data-aos-delay="500">
 
                     <div class="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full ">
                         <h2 class="text-2xl text-gray-800 font-semibold mb-4 mt-4">BETA實驗室測試ASTM D6866生質含量測試結果
@@ -357,7 +362,8 @@
             <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
                 <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
               after:w-[113%] after:hover:top-0 after:transition-all ">
-                    <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+                    <img src="../image/gototop.svg" alt=""
+                        class="transition-opacity hover:opacity-70  inline-block h-10 w-10 align-middle opacity-80" />
                 </div>
             </a>
             <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
@@ -498,6 +504,7 @@
         </div>
     </footer>
     <script src="../js/swiper.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/common.js"></script>
     <!-- Initialize Swiper -->
     <script>

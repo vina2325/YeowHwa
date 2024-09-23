@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon.ico">
     <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet" />
     <title>產品介紹-1</title>
     <style>
@@ -207,7 +208,8 @@
     </nav>
     <section class="banner relative">
         <!--breadcrumb  -->
-        <nav class="absolute inset-0 w-full h-12 z-30" aria-label="Breadcrumb">
+        <nav class="absolute inset-0 w-full h-12 z-30" aria-label="Breadcrumb" data-aos="fade-down"
+            data-aos-duration="1000">
             <div class="flex container mx-auto items-center justify-start xl:px-40 px-9 pt-5">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                     <li class="inline-flex items-center">
@@ -248,7 +250,8 @@
         <!--breadcrumb end -->
         <div class="relative pb-24 pt-24">
             <div class="container relative z-20 mx-auto flex justify-center  px-12 pb-8">
-                <div class="mx-auto  max-w-xl text-center">
+                <div class="mx-auto  max-w-xl text-center" data-aos="fade-down" data-aos-duration="3000"
+                    data-aos-delay="300">
                     <h1 class="my-5 text-5xl font-bold leading-tight text-gray-800">巨瑪斯車用油添加劑</h1>
                     <p class="mb-2 mt-2 text-lg leading-relaxed text-gray-600">
                         自有品牌零售，機油減磨劑/汽油添加劑/柴油添加劑，獲得傑出產業創新獎及AMPA汽車零配件創新產品獎。
@@ -262,7 +265,8 @@
     </section>
     <section class="content">
         <div class="container mx-auto pb-28 px-32">
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-y-16  lg:gap-x-32 gap-x-14 gap-y-8">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-y-16  lg:gap-x-32 gap-x-14 gap-y-8"
+                data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500">
                 <a class="block group" href="./products-2.html">
                     <div class="relative pt-[100%] border border-b-gray-200 rounded-s overflow-hidden">
                         <img class="scale-90 transition duration-200 ease-out transform group-hover:scale-100 object-cover absolute inset-0 h-full w-full"
@@ -559,7 +563,8 @@
             <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
                 <div class="relative inline-block overflow-hidden rounded-full after:absolute after:right-2/4  after:-z-10 after:block after:h-full after:translate-x-1/2 after:rounded-full after:bg-teal-light after:top-[27px]
               after:w-[113%] after:hover:top-0 after:transition-all ">
-                    <img src="../image/gototop.svg" alt="" class="inline-block h-10 w-10 align-middle opacity-80" />
+                    <img src="../image/gototop.svg" alt=""
+                        class="inline-block h-10 w-10 align-middle opacity-80  transition-opacity hover:opacity-60" />
                 </div>
             </a>
             <div class="relative z-20 mx-auto max-w-[1366px] flex-none px-[52px] pb-7">
@@ -699,6 +704,7 @@
         </div>
     </footer>
     <script src="../js/swiper.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/common.js"></script>
     <!-- Initialize Swiper -->
     <script>

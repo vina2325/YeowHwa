@@ -756,6 +756,10 @@ video {
   z-index: 50;
 }
 
+.z-\[9999px\] {
+  z-index: 9999px;
+}
+
 .order-1 {
   order: 1;
 }

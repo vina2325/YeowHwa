@@ -612,6 +612,10 @@ video {
   bottom: -1px;
 }
 
+.-top-8 {
+  top: -2rem;
+}
+
 .-top-9 {
   top: -2.25rem;
 }
@@ -726,18 +730,6 @@ video {
 
 .top-auto {
   top: auto;
-}
-
-.-top-6 {
-  top: -1.5rem;
-}
-
-.-top-8 {
-  top: -2rem;
-}
-
-.-top-10 {
-  top: -2.5rem;
 }
 
 .z-0 {
@@ -990,10 +982,6 @@ video {
   margin-top: auto;
 }
 
-.ms-2 {
-  margin-inline-start: 0.5rem;
-}
-
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -1192,6 +1180,10 @@ video {
   width: 2rem;
 }
 
+.w-\[120px\] {
+  width: 120px;
+}
+
 .w-\[2\.5em\] {
   width: 2.5em;
 }
@@ -1211,18 +1203,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-4 {
-  width: 1rem;
-}
-
-.w-\[100px\] {
-  width: 100px;
-}
-
-.w-\[120px\] {
-  width: 120px;
 }
 
 .max-w-36 {
@@ -1279,6 +1259,10 @@ video {
 
 .flex-none {
   flex: none;
+}
+
+.shrink {
+  flex-shrink: 1;
 }
 
 .flex-grow {
@@ -2248,22 +2232,6 @@ video {
   padding-top: 100%;
 }
 
-.pt-\[-2px\] {
-  padding-top: -2px;
-}
-
-.pt-\[-6px\] {
-  padding-top: -6px;
-}
-
-.pt-\[-10px\] {
-  padding-top: -10px;
-}
-
-.pt-\[-20px\] {
-  padding-top: -20px;
-}
-
 .text-left {
   text-align: left;
 }
@@ -2537,6 +2505,10 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -2559,6 +2531,12 @@ video {
 
 .transition-opacity {
   transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2598,6 +2576,23 @@ video {
 
 .dropdown-toggle:hover + .dropdown-menu {
   display: block;
+}
+
+.aos-item {
+  opacity: 0;
+  /* 初始透明度 */
+  transform: translateY(-20px);
+  /* 初始位置，元素向下移动 100px */
+  transition:
+    transform 1s ease-out,
+    opacity 1s ease-out;
+}
+
+.aos-animate .aos-item {
+  opacity: 1;
+  /* 动画结束时完全可见 */
+  transform: translateY(0px);
+  /* 动画目标，元素向下移动仅 10px */
 }
 
 .placeholder\:bg-teal-light::-moz-placeholder {
@@ -2712,6 +2707,10 @@ video {
   transition-duration: 150ms;
 }
 
+.first\:inline-block:first-child {
+  display: inline-block;
+}
+
 .only\:relative:only-child {
   position: relative;
 }
@@ -2780,6 +2779,10 @@ video {
   opacity: 0.7;
 }
 
+.hover\:opacity-60:hover {
+  opacity: 0.6;
+}
+
 .hover\:shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -2829,6 +2832,16 @@ video {
 
 .group:hover .group-hover\:h-full {
   height: 100%;
+}
+
+.group:hover .group-hover\:translate-x-2 {
+  --tw-translate-x: 0.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:translate-x-1 {
+  --tw-translate-x: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:scale-100 {
@@ -3455,10 +3468,6 @@ video {
     padding-left: 5rem;
   }
 
-  .lg\:pl-24 {
-    padding-left: 6rem;
-  }
-
   .lg\:pr-10 {
     padding-right: 2.5rem;
   }
@@ -3475,8 +3484,8 @@ video {
     padding-right: 1.25rem;
   }
 
-  .lg\:pt-32 {
-    padding-top: 8rem;
+  .lg\:pt-0 {
+    padding-top: 0px;
   }
 
   .lg\:pt-8 {

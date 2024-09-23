@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // 给每个 toggle 同时绑定 click 和 mouseover 事件
+  // 给每个 toggle 同时绑定 click 和 mouseenter 事件
   dropdownToggles.forEach((toggle) => {
-    ["click", "mouseover"].forEach((event) => {
+    ["click", "mouseenter"].forEach((event) => {
       toggle.addEventListener(event, () => toggleDropdown(toggle));
     });
   });
@@ -45,3 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+AOS.init();

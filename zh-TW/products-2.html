@@ -214,8 +214,8 @@
                 class="navigation-menu justify-between px-2 hidden flex-row items-center gap-5 pb-3 flex lg:flex  lg:space-x-1 lg:pb-0">
                 <a href="./inquiry.html" class="lg:flex-1 px-2 py-5 font-bold text-white relative">
                     <div class="dot h-2 w-2 absolute left-1/2 top-[8px]">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+                        <span id="ping-dot"
+                            class="absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
                         <span class="absolute inline-flex rounded-full h-2 w-2 bg-red-600"></span>
                     </div>
                     <img src="../image/bag.svg" alt="" />
@@ -227,6 +227,7 @@
 
         </div>
     </nav>
+
     <section class="banner relative">
         <!--breadcrumb  -->
         <nav class="absolute inset-0 w-full h-12 z-30" aria-label="Breadcrumb" data-aos="fade-down"
@@ -293,6 +294,21 @@
     </section>
     <section class="content ">
         <div class="container relative  mx-auto lg:py-28 lg:px-32 p-10">
+            <!-- 加入通知 -->
+            <div id="alert"
+                class="z-50 hidden fixed top-28 lg:right-20 right-4 p-3 border border-gray-600  text-gray-800 bg-gray-50 dark:bg-gray-800 dark:text-gray-400 rounded-lg shadow-md  items-center justify-between">
+                <span id="alert-text"></span>
+                <button id="close-alert"
+                    class="ms-auto -mx-1.5 -my-1.5 bg-gray-50 text-gray-500 rounded-lg focus:ring-2 focus:ring-gray-400 p-1.5 hover:bg-gray-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
+                    aria-label="Close">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                </button>
+            </div>
             <div class="w-full grid md:grid-cols-7  grid-cols-1  gap-y-10 lg:gap-x-36 gap-x-10" data-aos="fade-up"
                 data-aos-duration="3000" data-aos-delay="500">
                 <div class="place-self-center sm:col-span-3 swiper mySwiper1 border border-gray-200 px-5 md:px-0">
@@ -326,13 +342,13 @@
                                 <span class="text-basefont-semibold  text-white">GMARS688</span>
                             </div>
                         </div>
-                        <div class="-skew-x-12 inline-block text-gray-800 border border-teal px-3 py-1">
-                            <button type="button" class="skew-x-12">
-                                <a href="#">
-                                    <span>加入購物車</span>
-                                </a>
+                        <div
+                            class="-skew-x-12 inline-block text-gray-800 border border-teal px-3 py-1 group hover:border-b-white hover:bg-teal-strong transition-colors">
+                            <button id="cart-button" type="button" class="skew-x-12">
+                                <span class="group-hover:text-white">加入詢價車</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="size-6 inline-block">
+                                    stroke-width="1.5" stroke="currentColor"
+                                    class="size-6 inline-block group-hover:text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>
@@ -964,6 +980,51 @@
             var direction = "horizontal";
 
             return direction;
+        }
+
+        // 加入詢價車
+
+
+        const button = document.getElementById('cart-button');
+        const alertBox = document.getElementById('alert');
+        const alertText = document.getElementById('alert-text');
+        const closeAlert = document.getElementById('close-alert');
+        const pingDot = document.getElementById('ping-dot'); // ping 點
+        let inCart = false;
+        let timeoutId;
+
+        button.addEventListener('click', () => {
+            if (!inCart) {
+                alertText.textContent = '加入詢問車成功';
+                inCart = true;
+            } else {
+                alertText.textContent = '這筆已經在詢問車內了';
+            }
+            showAlert();
+            triggerPing(); // 觸發 ping 動畫
+        });
+
+        closeAlert.addEventListener('click', () => {
+            hideAlert();
+        });
+
+        function showAlert() {
+            clearTimeout(timeoutId); // 清除之前的 timeout，避免多次按下時出現快速閃爍
+            alertBox.classList.remove('hidden');
+            timeoutId = setTimeout(() => {
+                hideAlert();
+            }, 4000); // 4秒後自動隱藏
+        }
+
+        function hideAlert() {
+            alertBox.classList.add('hidden');
+        }
+
+        function triggerPing() {
+            // 如果尚未有 animate-ping 類別，則新增
+            if (!pingDot.classList.contains('animate-ping')) {
+                pingDot.classList.add('animate-ping'); // 新增 animate-ping 類別
+            }
         }
     </script>
 </body>

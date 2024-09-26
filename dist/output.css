@@ -1044,6 +1044,10 @@ video {
   margin-left: 1rem;
 }
 
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -1093,6 +1097,10 @@ video {
 
 .aspect-\[7\/8\] {
   aspect-ratio: 7/8;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
 }
 
 .size-10 {
@@ -1191,6 +1199,10 @@ video {
   height: 100%;
 }
 
+.h-4\/5 {
+  height: 80%;
+}
+
 .min-h-48 {
   min-height: 12rem;
 }
@@ -1283,6 +1295,10 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-4\/5 {
+  width: 80%;
 }
 
 .max-w-36 {
@@ -1564,6 +1580,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .place-self-center {
@@ -2312,6 +2334,10 @@ video {
   padding-top: 100%;
 }
 
+.pt-8 {
+  padding-top: 2rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3045,6 +3071,10 @@ video {
   opacity: 0.8;
 }
 
+.group:hover .first-letter\:group-hover\:underline::first-letter {
+  text-decoration-line: underline;
+}
+
 @media (min-width: 640px) {
   .sm\:left-24 {
     left: 6rem;
@@ -3200,12 +3230,20 @@ video {
     margin-top: 1.5rem;
   }
 
+  .md\:mr-0 {
+    margin-right: 0px;
+  }
+
   .md\:flex {
     display: flex;
   }
 
   .md\:aspect-\[400\/587\] {
     aspect-ratio: 400/587;
+  }
+
+  .md\:h-full {
+    height: 100%;
   }
 
   .md\:w-1\/2 {
@@ -3257,6 +3295,14 @@ video {
     flex-direction: row;
   }
 
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
+  .md\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
   .md\:flex-nowrap {
     flex-wrap: nowrap;
   }
@@ -3298,6 +3344,14 @@ video {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .md\:whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+
+  .md\:whitespace-break-spaces {
+    white-space: break-spaces;
   }
 
   .md\:bg-transparent {
@@ -3352,6 +3406,10 @@ video {
 
   .md\:pt-24 {
     padding-top: 6rem;
+  }
+
+  .md\:pt-16 {
+    padding-top: 4rem;
   }
 
   .md\:text-3xl {
